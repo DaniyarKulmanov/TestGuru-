@@ -1,3 +1,7 @@
 # frozen_string_literal: true
 
-User.find_or_create_by(name: 'John')
+NAMES = %w[John Daniyar Vasya Madiyar].freeze
+
+NAMES.each do |name|
+  User.find_or_create_by(name: name)
+end
