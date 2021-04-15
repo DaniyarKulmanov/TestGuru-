@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-answers_count = Question.all.size
+ids = Question.ids
+answers_count = ids.size
+
+BOOLEAN = [true, false].freeze
 
 answers_count.times do
-  Answer.find_or_create_by(correct: [true, false].sample, question_id: Question.all.sample.id)
+  Answer.find_or_create_by(correct: BOOLEAN.sample, question_id: ids.sample)
 end
