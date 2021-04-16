@@ -1,6 +1,9 @@
 class Test < ApplicationRecord
-  def self.titles(category)
-    category_id = Category.find_by(title: category)
-    Test.where(category_id: category_id).pluck(:title).sort.reverse
+  def self.by_category(category)
+    Test.joins('INNER JOIN categories ON categories.id = tests.category_id')
+        .where('categories.title' => category)
+        .pluck(:title)
+        .sort
+        .reverse
   end
 end
