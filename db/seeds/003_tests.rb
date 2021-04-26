@@ -5,8 +5,8 @@ USERS = User.all
 CATEGORIES = Category.all
 
 TESTS.each do |test|
-  user = USERS.sample.id
-  category = CATEGORIES.sample.id
+  user = USERS.all.sample
+  category = CATEGORIES.all.sample
   level = rand(0..3)
-  Test.find_or_create_by(title: test, level: level, author_id: user, category_id: category)
+  Test.find_or_create_by(title: test, level: level, author: user, category: category)
 end

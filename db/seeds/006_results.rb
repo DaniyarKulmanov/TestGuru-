@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-users = User.ids
-tests = Test.ids
+users = User.all
+tests = Test.all
 
 5.times do
-  Result.find_or_create_by(user_id: users.sample, test_id: tests.sample)
+  Result.find_or_create_by(user: users.sample, test: tests.sample)
 end
