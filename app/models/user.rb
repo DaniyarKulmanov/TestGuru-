@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :tests, through: :results
 
-  def test_by_level(level)
-    Test.joins(:results).where(level: level, results: { user_id: :id })
-  end
+  scope :test_by_level, lambda { |level, id|
+    joins(:tests, :results).where(tests: { level: level }, results: { user_id: id })
+  }
 end
