@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
-
   INFINITE = Float::INFINITY
 
   belongs_to :category

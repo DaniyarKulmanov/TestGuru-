@@ -5,5 +5,5 @@ class Answer < ApplicationRecord
 
   scope :proper, -> { where(correct: true) }
 
-  validates :correct, presence: true
+  validates :correct, :body, presence: true
 end
