@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
-  INFINITE = Float::INFINITY
 
   belongs_to :category
   belongs_to :author, class_name: 'User'
@@ -16,8 +15,12 @@ class Test < ApplicationRecord
 
   scope :beginner, -> { where(level: 0..1) }
   scope :advanced, -> { where(level: 2..4) }
-  scope :pro, -> { where(level: 5..INFINITE) }
+  scope :pro, -> { where(level: 5..Float::INFINITY) }
   scope :by_category, lambda { |category|
-    joins(:category).where(category: { title: category }).order(title: :desc).pluck(:title)
+    joins(:category).where(category: { title: category }).order(title: :desc)
   }
+
+  def self.categories_list(category)
+    by_category(category).pluck(:title)
+  end
 end
