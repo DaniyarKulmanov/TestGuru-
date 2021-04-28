@@ -1,2 +1,10 @@
 ru:
   hello: "Привет"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'Укажите электронную почту'
+              invalid: 'Не верный формат электронной почты'
