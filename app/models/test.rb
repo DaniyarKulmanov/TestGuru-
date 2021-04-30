@@ -16,7 +16,8 @@ class Test < ApplicationRecord
   scope :beginner, -> { where(level: 0..1) }
   scope :advanced, -> { where(level: 2..4) }
   scope :pro, -> { where(level: 5..Float::INFINITY) }
-  scope :by_category, ->(category) do
+
+  def self.by_category(category)
     joins(:category)
       .where(category: { title: category })
       .order(title: :desc)
