@@ -11,6 +11,6 @@ class Question < ApplicationRecord
   private
 
   def validate_answers_count
-    errors.add(:question, 'only 1 - 4 question allowed') unless answers.length.between?(1, 4)
+    errors.add(:question, 'only maximum 4 answers allowed') if answers.length > 4
   end
 end
