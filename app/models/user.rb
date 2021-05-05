@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
   validates :email, format: URI::MailTo::EMAIL_REGEXP
 
-  scope :test_by_level, lambda { |level, id|
-    joins(:tests, :results).where(tests: { level: level }, results: { user_id: id })
-  }
+  def test_by_level(level)
+    Test.joins(:results).where(level: level, results: { user_id: id })
+  end
 end
