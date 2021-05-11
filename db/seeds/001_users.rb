@@ -3,5 +3,5 @@
 NAMES = %w[John Daniyar Vasya Madiyar].freeze
 
 NAMES.each do |name|
-  User.find_or_create_by(name: name)
+  User.find_or_create_by(name: name, email: "#{name}@mailbox.kz")
 end
