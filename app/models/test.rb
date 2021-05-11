@@ -21,9 +21,6 @@ class Test < ApplicationRecord
     joins(:category)
       .where(category: { title: category })
       .order(title: :desc)
-  end
-
-  def self.categories_list(category)
-    by_category(category).pluck(:title)
+      .pluck(:title)
   end
 end
