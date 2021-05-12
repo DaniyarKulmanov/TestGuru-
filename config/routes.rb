@@ -3,5 +3,7 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  resources :tests
+  resources :tests do
+    resources :questions
+  end
 end
