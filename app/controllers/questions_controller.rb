@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   rescue_from ::ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    @questions = Question.joins(:test).where(test: params[:test_id])
+    @questions = @test.questions
     render inline: '<li> All Questions: <%= @questions.each{ |question| question }%></li>'
   end
 
@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create(question_params)
+    @question = @test.questions.build(question_params)
 
     if @question.save
       redirect_to @question
