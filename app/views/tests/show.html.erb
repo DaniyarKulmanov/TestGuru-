@@ -2,6 +2,8 @@
 
 <h2>Level: <%= @test.level %></h2>
 
+<%= link_to 'Add question', new_test_question_path(@test) %>
+
 <h2>Questions:</h2>
 
 <table>
