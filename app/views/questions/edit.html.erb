@@ -1,0 +1,14 @@
+<h1>Edit Question</h1>
+
+<%= form_with model: [@test, @question] do |form| %>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<p> <%= link_to 'back', test_path(@question.test_id) %> </p>
