@@ -3,6 +3,10 @@ ru:
   activerecord:
     errors:
       models:
+        question:
+          attributes:
+            body:
+              blank: 'Укажите тело вопроса'
         test:
           attributes:
             category:

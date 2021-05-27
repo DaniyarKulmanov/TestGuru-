@@ -1,4 +1,6 @@
-<%= form_with model: [@test, @question] do |form| %>
+<%= form_with model: [test_set, @question], local: true do |form| %>
+  <%= render 'shared/errors', resource: @question %>
+
   <div>
     <%= form.label :body %><br>
     <%= form.text_area :body %><br>
