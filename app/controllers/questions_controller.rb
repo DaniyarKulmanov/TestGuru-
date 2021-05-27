@@ -21,6 +21,7 @@ class QuestionsController < ApplicationController
     end
   end
 
+  # TODO fix errors with form_with
   def edit; end
 
   def update

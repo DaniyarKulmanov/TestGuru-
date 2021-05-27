@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show]
+  before_action :set_test, only: %i[show edit update]
 
   def index
     @tests = Test.all
@@ -16,6 +16,16 @@ class TestsController < ApplicationController
   def create
     @test = Test.new(test_params)
     @test.save ? (redirect_to @test) : (render :new)
+  end
+
+  def edit; end
+
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
   end
 
   private
