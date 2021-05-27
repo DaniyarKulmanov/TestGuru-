@@ -1,0 +1,25 @@
+<%= form_with model: @test do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %><br>
+  </div>
+
+  <div>
+    <%= form.label :level %><br>
+    <%= form.number_field :level %><br>
+  </div>
+
+  <div>
+    <%= form.label :category %><br>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %><br>
+  </div>
+
+  <div>
+    <%= form.label :author %><br>
+    <%= form.collection_select :author_id, User.all, :id, :name, prompt: true %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
