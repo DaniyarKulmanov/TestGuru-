@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :set_test, only: %i[index new create]
   before_action :set_question, only: %i[show edit update destroy]
+  before_action :set_test, only: %i[new create edit]
   rescue_from ::ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-
-  def index
-    @questions = @test.questions
-    render inline: '<li> All Questions: <%= @questions.each{ |question| question }%></li>'
-  end
 
   def show; end
 
@@ -45,7 +40,7 @@ class QuestionsController < ApplicationController
   private
 
   def set_test
-    @test = Test.find(params[:test_id])
+    @test = @question.nil? ? Test.find(params[:test_id]) : @question.test
   end
 
   def set_question

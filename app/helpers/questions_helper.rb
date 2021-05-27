@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module QuestionsHelper
-  ACTION_HEADER = { new: 'Create New', edit: 'Edit' }.freeze
-
-  def question_header
-    "#{ACTION_HEADER[params[:action].to_sym]} #{@question.test.title} Question"
+  def question_header(test_title)
+    @question.new_record? ? "Create New #{test_title} Question" : "Edit #{test_title} Question"
   end
 end

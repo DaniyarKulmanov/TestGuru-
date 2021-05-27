@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  AUTHOR = 'DaniyarKulmanov'
-  PROJECT = 'TestGuru-'
-
   def current_year
-    Date.today.year
+    Date.current.year
   end
 
   def github_url(author, repo = nil)
