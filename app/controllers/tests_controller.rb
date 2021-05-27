@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :set_test, only: %i[show edit update]
+  before_action :set_test, only: %i[show edit update destroy]
 
   def index
     @tests = Test.all
@@ -26,6 +26,12 @@ class TestsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @test.destroy
+
+    redirect_to root_path
   end
 
   private
