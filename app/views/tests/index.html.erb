@@ -3,12 +3,13 @@
 <p><%= link_to 'Add test', new_test_path(@test) %></p>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Questions count</th>
-  </tr>
-
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Level</th>
+      <th>Questions count</th>
+    </tr>
+  </thead>
   <%= render @tests %>
 
 </table>
