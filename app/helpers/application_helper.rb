@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def github_url(author, repo = nil)
-    title = repo.nil? ? "Автор #{author}" : 'Проект'
-    "<a href='https://github.com/#{author}/#{repo}' target='_blank'>#{title} #{repo}</a>".html_safe
+    title = repo.nil? ? "Автор #{author}" : "Проект #{repo}"
+    link_to title, "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 end
