@@ -3,6 +3,18 @@ ru:
   activerecord:
     errors:
       models:
+        question:
+          attributes:
+            body:
+              blank: 'Укажите тело вопроса'
+        test:
+          attributes:
+            category:
+              required: 'Укажите категорию теста'
+            author:
+              required: 'Укажите автора теста'
+            title:
+              blank: 'Название теста не должно быть пустым'
         user:
           attributes:
             email:
