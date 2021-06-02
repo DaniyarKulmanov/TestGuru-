@@ -8,4 +8,10 @@ Rails.application.routes.draw do
       resources :answers, shallow: true, expect: :index
     end
   end
+
+  resources :results, only: %i[show update] do
+    member do
+      get :attempt
+    end
+  end
 end
