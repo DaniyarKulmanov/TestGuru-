@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :set_test, only: %i[show edit update destroy]
+  before_action :set_test, only: %i[show edit update destroy begin]
+  before_action :set_user, only: :begin
 
   def index
     @tests = Test.all
@@ -39,6 +40,11 @@ class TestsController < ApplicationController
     redirect_to root_path
   end
 
+  def begin
+    @user.tests << @test
+    redirect_to @user.result(@test)
+  end
+
   private
 
   def test_params
@@ -47,5 +53,9 @@ class TestsController < ApplicationController
 
   def set_test
     @test = Test.find(params[:id])
+  end
+
+  def set_user
+    @user = User.first
   end
 end

@@ -12,7 +12,7 @@ class User < ApplicationRecord
     Test.joins(:results).where(level: level, results: { user_id: id })
   end
 
-  # def result(test)
-  #
-  # end
+  def result(test)
+    results.order(id: :desc).find_by(test_id: test.id)
+  end
 end
