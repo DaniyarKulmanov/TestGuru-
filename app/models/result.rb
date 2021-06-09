@@ -11,7 +11,11 @@ class Result < ApplicationRecord
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
     self.current_question = next_question
-    save
+    save!
+  end
+
+  def completed?
+    current_question.nil?
   end
 
   private

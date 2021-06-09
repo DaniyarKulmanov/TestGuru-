@@ -10,7 +10,11 @@ class ResultsController < ApplicationController
   def update
     @result.accept!(params[:answer_ids])
 
-    render :show
+    if @result.completed?
+      redirect_to attempt_result_path(@result)
+    else
+      render :show
+    end
   end
 
   private
