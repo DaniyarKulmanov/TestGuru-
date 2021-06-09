@@ -1,1 +1,20 @@
-<h1>Begin test test.title</h1>
+<h1>Begin test: <%= @result.test.title %></h1>
+
+<p>
+  <%= @result.current_question.body %>
+</p>
+
+<p>
+  Answers:
+</p>
+
+<%= form_with url: result_path(@result), method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |c| %>
+    <p>
+      <%= c.check_box id: "answer_ids#{c.object.id}"%>
+      <%= c.label %>
+    </p>
+  <% end %>
+
+  <p> <%= form.submit 'Next' %></p>
+<% end %>

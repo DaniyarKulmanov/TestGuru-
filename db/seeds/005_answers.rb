@@ -7,5 +7,5 @@ BOOLEAN = [true, false].freeze
 
 answers_count.times do
   random = rand(1..100).to_s
-  Answer.find_or_create_by(correct: BOOLEAN.sample, question: question.sample, body: "Body#{random}")
+  Answer.find_or_create_by(correct: BOOLEAN.sample, question: question.sample, body: "Answer_body#{random}")
 end
