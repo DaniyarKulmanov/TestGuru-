@@ -18,6 +18,14 @@ class Result < ApplicationRecord
     current_question.nil?
   end
 
+  def passed?
+    count_passage_result >= 85
+  end
+
+  def count_passage_result
+    ((correct_questions.to_f / test.questions.count) * 100).round
+  end
+
   private
 
   def before_validation_set_first_question
