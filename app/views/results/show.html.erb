@@ -1,6 +1,14 @@
 <h1>Begin test: <%= @result.test.title %></h1>
 
 <p>
+  Total questions: <%= @result.test.questions.count %>
+</p>
+
+<p>
+  Current question number: <%= @result.current_question.id %>
+</p>
+
+<p>
   <%= @result.current_question.body %>
 </p>
 
