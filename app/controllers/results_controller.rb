@@ -8,6 +8,8 @@ class ResultsController < ApplicationController
   def attempt; end
 
   def update
+    @result.accept!(params[:answer_ids])
+
     render :show
   end
 
