@@ -2,7 +2,14 @@
 
 module ResultsHelper
   def attempt_information
-    result = @result.count_passage_result
-    @result.passed? ? "<p span class='positive'>#{result}</p>".html_safe : "<p span class='negative'>#{result}</p>".html_safe
+    score = @result.score
+    if @result.passed?
+      status = 'positive'
+      result = "Passed score: #{score}"
+    else
+      status = 'negative'
+      result = "Not passed score: #{score}"
+    end
+    "<p span class=#{status}>#{result}</p>".html_safe
   end
 end
