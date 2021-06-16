@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# TODO: add only completed tests class method
 class Test < ApplicationRecord
 
   belongs_to :category
