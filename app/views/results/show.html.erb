@@ -16,6 +16,8 @@
   Answers:
 </p>
 
+<%= empty_questions? %>
+
 <%= form_with url: result_path(@result), method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |c| %>
     <p>

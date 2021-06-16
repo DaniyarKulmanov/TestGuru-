@@ -12,4 +12,8 @@ module ResultsHelper
     end
     "<p span class=#{status}>#{result}</p>".html_safe
   end
+
+  def empty_questions?
+    'No answers for this question, press next button' if @result.current_question.answers.empty?
+  end
 end
