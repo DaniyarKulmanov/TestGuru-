@@ -1,0 +1,30 @@
+<h1>Begin test: <%= @result.test.title %></h1>
+
+<p>
+  Total questions: <%= @result.test.questions.count %>
+</p>
+
+<p>
+  Current question number: <%= @result.current_question.id %>
+</p>
+
+<p>
+  <%= @result.current_question.body %>
+</p>
+
+<p>
+  Answers:
+</p>
+
+<%= empty_questions? %>
+
+<%= form_with url: result_path(@result), method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |c| %>
+    <p>
+      <%= c.check_box id: "answer_ids#{c.object.id}"%>
+      <%= c.label %>
+    </p>
+  <% end %>
+
+  <p> <%= form.submit 'Next' %></p>
+<% end %>

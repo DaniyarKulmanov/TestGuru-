@@ -23,4 +23,10 @@ class Test < ApplicationRecord
       .order(title: :desc)
       .pluck(:title)
   end
+
+  def self.only_filled
+    includes(:questions)
+      .where.not(questions: { id: nil })
+      .sort
+  end
 end
