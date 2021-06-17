@@ -4,7 +4,7 @@ class TestsController < ApplicationController
   before_action :set_test, only: %i[show edit update destroy begin]
 
   def index
-    @tests = Test.all
+    @tests = Test.only_filled
   end
 
   def show; end

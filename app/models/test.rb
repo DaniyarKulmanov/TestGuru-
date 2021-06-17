@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# TODO: add only completed tests class method
 class Test < ApplicationRecord
 
   belongs_to :category
@@ -23,5 +22,11 @@ class Test < ApplicationRecord
       .where(category: { title: category })
       .order(title: :desc)
       .pluck(:title)
+  end
+
+  def self.only_filled
+    includes(:questions)
+      .where.not(questions: { id: nil })
+      .sort
   end
 end
