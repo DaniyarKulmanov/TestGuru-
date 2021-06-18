@@ -15,4 +15,14 @@ class User < ApplicationRecord
   def result(test)
     results.order(id: :desc).find_by(test_id: test.id)
   end
+
+  def authenticate(password_string)
+    digest(password_string) == password_digest ? self : false
+  end
+
+  private
+
+  def digest(string)
+    Digest::SHA1.hexdigest(string)
+  end
 end
