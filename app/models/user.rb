@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+
+  include Auth
+
   has_many :results, dependent: :destroy
   has_many :tests, through: :results
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
-
-  validates :name, :email, presence: true
-  validates :email, format: URI::MailTo::EMAIL_REGEXP
 
   def test_by_level(level)
     Test.joins(:results).where(level: level, results: { user_id: id })
@@ -14,15 +14,5 @@ class User < ApplicationRecord
 
   def result(test)
     results.order(id: :desc).find_by(test_id: test.id)
-  end
-
-  def authenticate(password_string)
-    digest(password_string) == password_digest ? self : false
-  end
-
-  private
-
-  def digest(string)
-    Digest::SHA1.hexdigest(string)
   end
 end
