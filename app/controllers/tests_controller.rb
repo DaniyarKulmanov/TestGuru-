@@ -41,7 +41,7 @@ class TestsController < ApplicationController
   end
 
   def begin
-    @user = User.first
+    @user = @current_user
     @user.tests << @test
     redirect_to @user.result(@test)
   end
