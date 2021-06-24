@@ -11,6 +11,7 @@ module SessionsHelper
 
   def log_out
     session.delete(:user_id)
+    cookies.delete :original_path
     @current_user = nil
   end
 
