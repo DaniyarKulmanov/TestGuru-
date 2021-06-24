@@ -19,5 +19,6 @@ module SessionsHelper
   def authenticate_user!
     redirect_to login_path, alert: 'Enter email and password' unless current_user
     cookies[:email] = current_user&.email
+    cookies[:original_path] = request.path
   end
 end
