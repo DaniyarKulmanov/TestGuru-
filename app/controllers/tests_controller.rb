@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_test, only: %i[show edit update destroy begin]
 
   def index
@@ -40,9 +41,8 @@ class TestsController < ApplicationController
   end
 
   def begin
-    @user = User.first
-    @user.tests << @test
-    redirect_to @user.result(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.result(@test)
   end
 
   private
