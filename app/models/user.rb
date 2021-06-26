@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :tests, through: :results
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
 
-  validates :name, :email, presence: true
+  validates :email, presence: true
   validates :email, format: URI::MailTo::EMAIL_REGEXP
 
   def test_by_level(level)

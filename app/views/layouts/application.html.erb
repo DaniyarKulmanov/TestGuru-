@@ -14,17 +14,14 @@
 
   <p class = 'nav user'>Project <%= link_to 'TestGuru-', root_path %></p>
 
-  <% if logged_in? %>
+  <% if user_signed_in? %>
       <p class = 'nav user'>Welcome,
         <b><%= current_user.email %></b>
-        <b><%= link_to 'Log out', logout_path, method: :delete %></b>
-      </p>
-    <% else %>
-      <p class = 'nav user'>
-        <b><%= link_to 'Sing up', signup_path %></b>
-        <b><%= link_to 'Login', login_path %></b>
+        <b><%= link_to 'Log out', destroy_user_session_path, method: :delete %></b>
       </p>
     <% end %>
+
+    <%= render 'shared/flash' %>
 
     <%= yield %>
     <%= render "shared/footer" %>
