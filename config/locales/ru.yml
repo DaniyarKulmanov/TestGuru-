@@ -24,6 +24,10 @@ ru:
               blank: 'Укажите пароль'
             password_confirmation:
               confirmation: 'Подтвердите пароль'
+            first_name:
+              blank: 'Укажите Имя'
+            last_name:
+              blank: 'Укажите Фамилию'
         admin:
           attributes:
             first_name:
