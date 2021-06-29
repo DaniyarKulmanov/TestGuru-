@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ResultsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_result, only: %i[show attempt update]
 
   def show; end
@@ -11,6 +12,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
+      TestsMailer.completed_test(@result).deliver_now
       redirect_to attempt_result_path(@result)
     else
       render :show
