@@ -3,11 +3,6 @@
     <td><%= test.title %></td>
     <td><%= test.level %></td>
     <td><%= test.questions.count %></td>
-    <td><%= link_to 'show', test_path(test) %></td>
-    <td><%= link_to 'edit', edit_test_path(test) %></td>
-    <td><%= link_to 'destroy', test_path(test),
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %></td>
     <td><%= button_to 'start', begin_test_path(test) %></td>
   </tr>
 </tbody>

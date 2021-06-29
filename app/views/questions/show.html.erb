@@ -16,4 +16,5 @@
 
 </table>
 
-<p> <%= link_to 'back', test_path(@question.test_id) %> </p>
+<p> <%= link_to 'edit', edit_question_path(@question) %> </p>
+<p> <%= link_to 'back', admin_test_path(@question.test_id) %> </p>

@@ -13,8 +13,8 @@
       <th colspan="3">Actions</th>
     </tr>
   </thead>
-  <%= render @test.questions %>
-
+  <%= render partial: 'questions/question', collection: @test.questions %>
 </table>
 
-<p><%= link_to 'back', tests_path %></p>
+<p><%= link_to 'edit', edit_admin_test_path(@test) %></p>
+<p><%= link_to 'back', admin_tests_path %></p>
