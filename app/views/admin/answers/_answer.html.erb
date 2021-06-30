@@ -1,0 +1,10 @@
+<tbody>
+<tr>
+  <td><%= answer.body %></td>
+  <td><%= link_to 'show', admin_answer_path(answer) %></td>
+  <td><%= link_to 'edit', edit_admin_answer_path(answer) %></td>
+  <td><%= link_to 'delete', admin_answer_path(answer),
+                  method: :delete,
+                  data: { confirm: 'Confirm deletion' } %></td>
+</tr>
+</tbody>

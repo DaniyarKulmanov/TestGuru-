@@ -1,6 +1,6 @@
 <h3>Question body: <%= @question.body %></h3>
 
-<%= link_to 'New answer', new_question_answer_path(@question) %>
+<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
 
 <h2>Answers</h2>
 
@@ -16,5 +16,5 @@
 
 </table>
 
-<p> <%= link_to 'edit', edit_question_path(@question) %> </p>
+<p> <%= link_to 'edit', edit_admin_question_path(@question) %> </p>
 <p> <%= link_to 'back', admin_test_path(@question.test_id) %> </p>

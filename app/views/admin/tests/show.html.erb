@@ -2,7 +2,7 @@
 
 <h2>Level: <%= @test.level %></h2>
 
-<%= link_to 'Add question', new_test_question_path(@test) %>
+<%= link_to 'Add question', new_admin_test_question_path(@test) %>
 
 <h2>Questions:</h2>
 
@@ -13,7 +13,7 @@
       <th colspan="3">Actions</th>
     </tr>
   </thead>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render partial: 'admin/questions/question', collection: @test.questions %>
 </table>
 
 <p><%= link_to 'edit', edit_admin_test_path(@test) %></p>
