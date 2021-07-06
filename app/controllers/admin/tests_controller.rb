@@ -41,11 +41,6 @@ class Admin::TestsController < Admin::BaseController
     redirect_to root_path
   end
 
-  def begin
-    current_user.tests.push(@test)
-    redirect_to current_user.result(@test)
-  end
-
   private
 
   def test_params
@@ -57,6 +52,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def set_author
-    @test.author_id = current_user.id
+    @test.author = current_user
   end
 end

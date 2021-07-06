@@ -23,6 +23,9 @@ Rails.application.routes.draw do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, expect: :index
       end
+      member do
+        post :begin, to: 'tests#begin'
+      end
     end
   end
 end
