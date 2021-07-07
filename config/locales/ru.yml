@@ -17,8 +17,6 @@ ru:
               blank: 'Название теста не должно быть пустым'
         user:
           attributes:
-            name:
-              blank: 'Укажите Имя пользователя'
             email:
               blank: 'Укажите электронную почту'
               invalid: 'Не верный формат электронной почты'
@@ -26,3 +24,13 @@ ru:
               blank: 'Укажите пароль'
             password_confirmation:
               confirmation: 'Подтвердите пароль'
+            first_name:
+              blank: 'Укажите Имя'
+            last_name:
+              blank: 'Укажите Фамилию'
+        admin:
+          attributes:
+            first_name:
+             blank: 'Укажите Имя'
+            last_name:
+              blank: 'Укажите Фамилию'
