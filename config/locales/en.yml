@@ -1,5 +1,37 @@
 en:
   hello: "Hello world"
+
+  helpers:
+    select:
+      test:
+        promt: 'Select category'
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Update test'
+
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category: 'Category'
+
   tests:
     index:
       header: 'Available tests'
+      question_count: "Questions"
+      actions: "Actions"
+    test:
+      start: "Go!"
+  admin:
+    tests:
+      form:
+        prompt: 'Choose category'
+      index:
+        header: 'Available tests'
+      new:
+        header: 'New test'
+      edit:
+        header: 'Edit test'
+      create:
+        success: 'Successfully created'
