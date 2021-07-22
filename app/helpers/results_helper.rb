@@ -5,11 +5,19 @@ module ResultsHelper
     score = @result.score
     if @result.passed?
       status = 'positive'
-      result = "Passed score: #{score}"
+      result = t('results.passed', score: score)
     else
       status = 'negative'
-      result = "Not passed score: #{score}"
+      result = t('results.not_passed', score: score)
     end
     "<p span class=#{status}>#{result}</p>".html_safe
+  end
+
+  def correct_path(user)
+    if user.is_a?(Admin)
+      admin_tests_path
+    else
+      tests_path
+    end
   end
 end

@@ -1,6 +1,13 @@
 en:
   hello: "Hello world"
-  back: "Back"
+  show: 'display'
+  edit: 'edit'
+  delete: 'delete'
+  confirm: "Delete %{object}?"
+  back: "back"
+
+  test:
+    start: "Go!"
 
   helpers:
     submit:
@@ -19,8 +26,6 @@ en:
       header: 'Available tests'
       question_count: "Questions"
       actions: "Actions"
-    test:
-      start: "Go!"
 
   results:
     attempt:
@@ -36,6 +41,8 @@ en:
           zero: "Total no questions"
           one: "Total %{count} question"
           other: "Total %{count} questions"
+    passed: "Test passed, score: %{score}"
+    not_passed: "Test was not passed, score: %{score}"
 
   admin:
     tests:
@@ -43,12 +50,20 @@ en:
         prompt: 'Choose category'
       index:
         header: 'Available tests'
+        questions_count: "Total questions"
       new:
         header: 'New test'
       edit:
         header: 'Edit test'
       create:
         success: 'Successfully created'
+      show:
+        title: "Test name %{title}"
+        level: "Level %{level}"
+        question: "Add new question"
+        questions: "Questions:"
+        body: "Text"
+        actions: "Actions"
   shared:
     errors:
       header:

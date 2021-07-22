@@ -3,11 +3,11 @@
     <td><%= test.title %></td>
     <td><%= test.level %></td>
     <td><%= test.questions.count %></td>
-    <td><%= link_to 'show', admin_test_path(test) %></td>
-    <td><%= link_to 'edit', edit_admin_test_path(test) %></td>
-    <td><%= link_to 'destroy', admin_test_path(test),
+    <td><%= link_to t('show'), admin_test_path(test) %></td>
+    <td><%= link_to t('edit'), edit_admin_test_path(test) %></td>
+    <td><%= link_to t('delete'), admin_test_path(test),
                     method: :delete,
-                    data: { confirm: 'Are you sure?' } %></td>
-    <td><%= button_to 'start', begin_test_path(test) %></td>
+                    data: { confirm: t('confirm', object: test.title) } %></td>
+    <td><%= button_to t('test.start'), begin_test_path(test) %></td>
   </tr>
 </tbody>

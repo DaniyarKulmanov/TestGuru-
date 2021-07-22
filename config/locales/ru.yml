@@ -1,6 +1,13 @@
 ru:
   hello: 'Привет Мир'
-  back: 'Назад'
+  show: 'просмотр'
+  edit: 'изменить'
+  delete: 'удалить'
+  confirm: 'Удалить %{object}?'
+  back: 'назад'
+
+  test:
+    start: "Начать!"
 
   helpers:
     submit:
@@ -19,8 +26,7 @@ ru:
       header: 'Доступные тесты'
       question_count: "Вопросов"
       actions: "Действие"
-    test:
-      start: "Начать!"
+
 
   results:
     attempt:
@@ -37,6 +43,8 @@ ru:
           many: "Всего %{count} вопросов"
           one: "Всего %{count} вопрос"
           other: "Всего %{count} вопроса"
+    passed: "Тест пройден успешно, баллы: %{score}"
+    not_passed: "Тест не пройден, баллы: %{score}"
 
   admin:
     tests:
@@ -44,19 +52,27 @@ ru:
         prompt: 'Выбрать категорию'
       index:
         header: 'Доступные тесты'
+        questions_count: "Всего вопросов"
       new:
         header: 'Новый тест'
       edit:
         header: 'Изменить тест'
       create:
         success: 'Тест успешно создан'
+      show:
+        title: "Название теста %{title}"
+        level: "Уровень %{level}"
+        question: "Добавить новый вопрос"
+        questions: "Вопросы:"
+        body: "Текст"
+        actions: "Действия"
 
   shared:
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
-        one: "Обнаружено %{count} ошибка"
+        one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
 
   activerecord:
