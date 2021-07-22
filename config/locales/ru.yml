@@ -1,5 +1,6 @@
 ru:
   hello: 'Привет Мир'
+  back: 'Назад'
 
   helpers:
     submit:
@@ -21,6 +22,22 @@ ru:
     test:
       start: "Начать!"
 
+  results:
+    attempt:
+      completed: "Тест %{title} завершен УРА!"
+      result_html: "<p> Результат прохождения %{result} </p>"
+    show:
+      test: "Проходим тест %{title}"
+      next: "Следующий вопрос"
+      current_question: "Текущий вопрос №: %{question_id}"
+      answers: "Ответы:"
+      total:
+        questions:
+          few: "Всего %{count} вопроса"
+          many: "Всего %{count} вопросов"
+          one: "Всего %{count} вопрос"
+          other: "Всего %{count} вопроса"
+
   admin:
     tests:
       form:
@@ -33,6 +50,14 @@ ru:
         header: 'Изменить тест'
       create:
         success: 'Тест успешно создан'
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
 
   activerecord:
     errors:

@@ -1,10 +1,8 @@
 en:
   hello: "Hello world"
+  back: "Back"
 
   helpers:
-    select:
-      test:
-        promt: 'Select category'
     submit:
       test:
         create: 'Create test'
@@ -23,6 +21,22 @@ en:
       actions: "Actions"
     test:
       start: "Go!"
+
+  results:
+    attempt:
+      completed: "The %{title} test was completed Hooray!"
+      result_html: "Attempt result %{result}"
+    show:
+      test: "Processing test %{title}"
+      next: "Next question"
+      current_question: "Current question id: %{question_id}"
+      answers: "Answers:"
+      total:
+        questions:
+          zero: "Total no questions"
+          one: "Total %{count} question"
+          other: "Total %{count} questions"
+
   admin:
     tests:
       form:
@@ -35,3 +49,8 @@ en:
         header: 'Edit test'
       create:
         success: 'Successfully created'
+  shared:
+    errors:
+      header:
+        one: "Total %{count} error detected"
+        other: "Total %{count} errors detected"

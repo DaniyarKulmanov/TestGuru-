@@ -1,22 +1,12 @@
-<h1>Begin test: <%= @result.test.title %></h1>
+<h1><%= t('.test', title: @result.test.title) %></h1>
 
-<p>
-  Total questions: <%= @result.test.questions.count %>
-</p>
+<p><%= t('.total.questions', count: @result.test.questions.count) %></p>
 
-<p>
-  Current question number: <%= @result.current_question.id %>
-</p>
+<p><%= t('.current_question', question_id: @result.current_question.id ) %></p>
 
-<p>
-  <%= @result.current_question.body %>
-</p>
+<p><%= @result.current_question.body %></p>
 
-<p>
-  Answers:
-</p>
-
-<%= empty_questions? %>
+<p><%= t('.answers') %></p>
 
 <%= form_with url: result_path(@result), method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |c| %>
@@ -26,5 +16,5 @@
     </p>
   <% end %>
 
-  <p> <%= form.submit 'Next' %></p>
+  <p> <%= form.submit t('.next') %></p>
 <% end %>
