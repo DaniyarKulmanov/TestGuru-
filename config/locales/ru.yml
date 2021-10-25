@@ -74,38 +74,3 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-
-  activerecord:
-    errors:
-      models:
-        question:
-          attributes:
-            body:
-              blank: 'Укажите тело вопроса'
-        test:
-          attributes:
-            category:
-              required: 'Укажите категорию теста'
-            author:
-              required: 'Укажите автора теста'
-            title:
-              blank: 'Название теста не должно быть пустым'
-        user:
-          attributes:
-            email:
-              blank: 'Укажите электронную почту'
-              invalid: 'Не верный формат электронной почты'
-            password:
-              blank: 'Укажите пароль'
-            password_confirmation:
-              confirmation: 'Подтвердите пароль'
-            first_name:
-              blank: 'Укажите Имя'
-            last_name:
-              blank: 'Укажите Фамилию'
-        admin:
-          attributes:
-            first_name:
-             blank: 'Укажите Имя'
-            last_name:
-              blank: 'Укажите Фамилию'
