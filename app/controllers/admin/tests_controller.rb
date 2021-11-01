@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
     set_author
 
     if @test.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end

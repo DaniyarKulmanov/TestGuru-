@@ -1,0 +1,72 @@
+en:
+  activerecord:
+    models:
+      user:
+        one: 'User'
+        other: 'Users'
+      admin:
+        one: 'Admin'
+        other: 'Admins'
+      test:
+        one: 'Test'
+        other: 'Tests'
+      question:
+        one: 'Question'
+        other: 'Questions'
+      answer:
+        one: 'Answer'
+        other: 'Answers'
+
+    attributes:
+      test:
+        title:
+          one: '%{count} name'
+          other: '%{count} names'
+        level: 'Level'
+      user:
+        email: 'email'
+        first_name: 'first_name'
+        last_name: 'last_name'
+      result:
+        correct_questions: 'correct questions'
+      question:
+        body: 'body'
+      category:
+        title: 'title'
+      answer:
+        body: 'body'
+        correct: 'correct'
+
+    errors:
+      models:
+        question:
+          attributes:
+            body:
+              blank: "can't be blank"
+        test:
+          attributes:
+            category:
+              required: 'Please choose category'
+            author:
+              required: "can't be blank"
+            title:
+              blank: "can't be blank"
+        user:
+          attributes:
+            email:
+              blank: "can't be blank"
+              invalid: 'Invalid email format'
+            password:
+              blank: "can't be blank"
+            password_confirmation:
+              confirmation: "can't be blank"
+            first_name:
+              blank: "can't be blank"
+            last_name:
+              blank: "can't be blank"
+        admin:
+          attributes:
+            first_name:
+              blank: "can't be blank"
+            last_name:
+              blank: "can't be blank"

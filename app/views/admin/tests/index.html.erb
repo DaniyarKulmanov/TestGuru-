@@ -1,14 +1,14 @@
-<h2>Tests:</h2>
+<h2><%= t('.header') %></h2>
 
-<p><%= link_to 'Add test', new_admin_test_path(@test) %></p>
+<p><%= link_to t('admin.tests.new.header'), new_admin_test_path(@test) %></p>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Level</th>
-      <th>Questions count</th>
-      <th colspan="4">Actions</th>
+      <th><%= t('admin.tests.show.title', title: nil)%></th>
+      <th><%= t('admin.tests.show.level', level: nil)%></th>
+      <th><%= t('.questions_count') %></th>
+      <th colspan="4"><%= t('admin.tests.show.actions') %></th>
     </tr>
   </thead>
   <%= render @tests %>

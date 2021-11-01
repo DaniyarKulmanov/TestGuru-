@@ -1,0 +1,65 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one: "%{count} пользователь"
+        few: "%{count} пользователя"
+        many: "%{count} пользователей"
+        other: "%{count} пользователя"
+      admin: "Администратор"
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+    attributes:
+      test:
+        title:
+          one: "%{count} название"
+          other: "%{count} названия"
+        level: "Уровень"
+        user:
+          email: "email"
+          first_name: "Имя"
+          last_name: "Фамилия"
+        result:
+          correct_questions: "количество правильных ответов"
+        question:
+          body: "Тело"
+        category:
+          title: "Название"
+        answer:
+          body: "Тело"
+          correct: "правильный"
+
+    errors:
+      models:
+        question:
+          attributes:
+            body:
+              blank: "Укажите тело вопроса"
+        test:
+          attributes:
+            category:
+              required: "Укажите категорию теста"
+            author:
+              required: "Укажите автора теста"
+            title:
+              blank: "не должно быть пустым"
+        user:
+          attributes:
+            email:
+              blank: "Укажите электронную почту"
+              invalid: "Не верный формат электронной почты"
+            password:
+              blank: "Укажите пароль"
+            password_confirmation:
+              confirmation: "Подтвердите пароль"
+            first_name:
+              blank: "Укажите Имя"
+            last_name:
+              blank: "Укажите Фамилию"
+        admin:
+          attributes:
+            first_name:
+              blank: "Укажите Имя"
+            last_name:
+              blank: "Укажите Фамилию"

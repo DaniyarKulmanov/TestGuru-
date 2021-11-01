@@ -1,5 +1,5 @@
-<h1>The <%= @result.test.title %> test was completed!</h1>
+<h1><%= t('.completed', title: @result.test.title) %></h1>
 
-<p>attempt result: <%= attempt_information %></p>
+<%= t('.result_html', result: attempt_information ) %>
 
-<p> <%= link_to 'Back to all tests', tests_path %> </p>
+<p> <%= link_to t(:back), correct_path(@result.user) %> </p>
