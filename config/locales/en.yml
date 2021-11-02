@@ -5,6 +5,8 @@ en:
   delete: 'delete'
   confirm: "Delete %{object}?"
   back: "back"
+  welcome: 'Welcome'
+  guru: 'Guru'
 
   test:
     start: "Go!"

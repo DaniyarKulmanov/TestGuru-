@@ -5,6 +5,8 @@ ru:
   delete: 'удалить'
   confirm: 'Удалить %{object}?'
   back: 'назад'
+  welcome: 'Добро пожаловать'
+  guru: 'Гуру'
 
   test:
     start: "Начать!"
