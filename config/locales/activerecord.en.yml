@@ -19,10 +19,9 @@ en:
 
     attributes:
       test:
-        title:
-          one: '%{count} name'
-          other: '%{count} names'
+        title: 'Name'
         level: 'Level'
+        category: 'Category'
       user:
         email: 'email'
         first_name: 'first_name'
