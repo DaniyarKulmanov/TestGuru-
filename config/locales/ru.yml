@@ -39,6 +39,7 @@ ru:
       next: "Следующий вопрос"
       current_question: "Текущий вопрос №: %{question_id}"
       answers: "Ответы:"
+      gist_question: 'Отправить вопрос в гист'
       total:
         questions:
           few: "Всего %{count} вопроса"
@@ -47,6 +48,9 @@ ru:
           other: "Всего %{count} вопроса"
     passed: "Тест пройден успешно, баллы: %{score}"
     not_passed: "Тест не пройден, баллы: %{score}"
+    gist:
+      success: 'Гист создан успешно %{url}'
+      failure: 'Гист не создан'
 
   admin:
     tests:

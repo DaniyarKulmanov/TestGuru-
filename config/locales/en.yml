@@ -38,6 +38,7 @@ en:
       next: "Next question"
       current_question: "Current question id: %{question_id}"
       answers: "Answers:"
+      gist_question: "Gist Question"
       total:
         questions:
           zero: "Total no questions"
@@ -45,6 +46,9 @@ en:
           other: "Total %{count} questions"
     passed: "Test passed, score: %{score}"
     not_passed: "Test was not passed, score: %{score}"
+    gist:
+      success: 'Gist was successfully created %{url}'
+      failure: 'An error occured while saving gist'
 
   admin:
     tests:

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :results, only: %i[show update] do
     member do
       get :attempt
+      post :gist
     end
   end
 
