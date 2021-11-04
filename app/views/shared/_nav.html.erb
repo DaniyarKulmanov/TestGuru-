@@ -1,7 +1,11 @@
-<div class="navbar navbar-warning bg-warning">
+<nav class="navbar navbar-light bg-light">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
 
   <span class="navbar-text">
+    <% if current_user.is_a?(Admin) %>
+      <%= link_to "Admin panel", admin_tests_path %>
+    <% end %>
+
     <% if user_signed_in? %>
       <%= t('.welcome')%>, <b><%= current_user.email %></b> <%= t('.guru')%> |
       <%= link_to "log out", destroy_user_session_path, method: :delete %>
@@ -10,4 +14,4 @@
       <%= link_to "Sign up", new_registration_path(resource_name) %>
     <% end %>
   </span>
-</div>
+</nav>

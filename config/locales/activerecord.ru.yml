@@ -10,25 +10,25 @@ ru:
       test: "Тест"
       question: "Вопрос"
       answer: "Ответ"
+
     attributes:
       test:
-        title:
-          one: "%{count} название"
-          other: "%{count} названия"
+        title: "Название"
         level: "Уровень"
-        user:
-          email: "email"
-          first_name: "Имя"
-          last_name: "Фамилия"
-        result:
-          correct_questions: "количество правильных ответов"
-        question:
-          body: "Тело"
-        category:
-          title: "Название"
-        answer:
-          body: "Тело"
-          correct: "правильный"
+        category: 'Категория'
+      user:
+        email: 'email'
+        first_name: "Имя"
+        last_name: "Фамилия"
+      result:
+        correct_questions: "количество правильных ответов"
+      question:
+        body: "Тело"
+      category:
+        title: "Название"
+      answer:
+        body: "Тело"
+        correct: "правильный"
 
     errors:
       models:
@@ -39,15 +39,15 @@ ru:
         test:
           attributes:
             category:
-              required: "Укажите категорию теста"
+              required: "укажите категорию теста"
             author:
-              required: "Укажите автора теста"
+              required: "укажите автора теста"
             title:
               blank: "не должно быть пустым"
         user:
           attributes:
             email:
-              blank: "Укажите электронную почту"
+              blank: "укажите электронную почту"
               invalid: "Не верный формат электронной почты"
             password:
               blank: "Укажите пароль"

@@ -1,12 +1,12 @@
 <h2><%= t('.header') %></h2>
 
-<table>
+<table class="table table-bordered border-primary">
   <thead>
     <tr>
       <th><%= t('helpers.label.test.title') %></th>
-      <th><%= t('helpers.label.test.level') %></th>
-      <th><%= t('.question_count') %></th>
-      <th><%= t('.actions') %></th>
+      <th class="text-center"><%= t('helpers.label.test.level') %></th>
+      <th class="text-center"><%= t('.question_count') %></th>
+      <th class="text-center"><%= t('.actions') %></th>
     </tr>
   </thead>
   <%= render @tests %>
