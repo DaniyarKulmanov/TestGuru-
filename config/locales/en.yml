@@ -7,6 +7,8 @@ en:
   back: "back"
   welcome: 'Welcome'
   guru: 'Guru'
+  gist_question: 'A question about %{title} from TestGuru'
+  gist_filename: 'test-guru-question.txt'
 
   test:
     start: "Go!"

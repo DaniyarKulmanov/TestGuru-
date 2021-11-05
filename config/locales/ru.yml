@@ -7,6 +7,8 @@ ru:
   back: 'назад'
   welcome: 'Добро пожаловать'
   guru: 'Гуру'
+  gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
+  gist_filename: 'test-guru-вопрос.txt'
 
   test:
     start: "Начать!"
