@@ -20,12 +20,12 @@ class ResultsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@result.current_question).call
+    resposne = GistQuestionService.new(@result).call
 
-    flash_options = if result[:html_url].nil?
+    flash_options = if resposne.nil?
       { alert: t('.failure') }
     else# TODO: clickable link
-      { notice: t('.success', url: result[:html_url].html_safe) }
+      { notice: t('.success', url: resposne.url) }
     end
 
     redirect_to @result, flash_options
@@ -36,4 +36,5 @@ class ResultsController < ApplicationController
   def set_result
     @result = Result.find(params[:id])
   end
+
 end

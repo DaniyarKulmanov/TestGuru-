@@ -1,13 +1,14 @@
 class GistQuestionService
 
-  def initialize(question, client: nil)
-    @question = question
+  def initialize(result, client: nil)
+    @question = result.current_question
     @test = @question.test
+    @user = result.user
     @client = client || GitHubClient.new
   end
 
   def call
-    @client.create_gist(gist_params)
+    @published_gist = @client.publish_gist(gist_params, @question, @user)
   end
 
   private
