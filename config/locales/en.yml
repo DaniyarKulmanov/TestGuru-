@@ -56,6 +56,10 @@ en:
     gists:
       index:
         header: 'Total gists'
+        question: 'Question body'
+        url: 'Link'
+        email: 'User email'
+        delete: 'Delete'
     tests:
       form:
         prompt: 'Choose category'

@@ -3,7 +3,7 @@ ru:
   show: 'просмотр'
   edit: 'изменить'
   delete: 'удалить'
-  confirm: 'Удалить %{object}?'
+  confirm: "удалить %{object} ?"
   back: 'назад'
   welcome: 'Добро пожаловать'
   guru: 'Гуру'
@@ -55,6 +55,13 @@ ru:
       failure: 'Гист не создан'
 
   admin:
+    gists:
+      index:
+        header: 'Все записи gists'
+        question: 'Тело вопроса'
+        url: 'Ссылка'
+        email: 'Почта пользователя'
+        delete: 'Удалить'
     tests:
       form:
         prompt: 'Выбрать категорию'
@@ -82,7 +89,3 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-
-  gists:
-    index:
-      header: 'Все gists'
