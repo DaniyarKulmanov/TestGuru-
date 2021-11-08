@@ -10,6 +10,10 @@ class GitHubClient
     register_gist(gist, question, user)
   end
 
+  def destroy(gist)
+    @client.delete_gist(gist)
+  end
+
   private
 
   def register_gist(gist, question, user)
