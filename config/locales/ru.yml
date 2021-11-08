@@ -51,7 +51,7 @@ ru:
     passed: "Тест пройден успешно, баллы: %{score}"
     not_passed: "Тест не пройден, баллы: %{score}"
     gist:
-      success: 'Гист создан успешно %{url}'
+      success: 'Гист создан успешно'
       failure: 'Гист не создан'
 
   admin:

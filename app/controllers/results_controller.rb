@@ -24,8 +24,8 @@ class ResultsController < ApplicationController
 
     flash_options = if resposne.nil?
       { alert: t('.failure') }
-    else# TODO: clickable link
-      { notice: t('.success', url: resposne.html_url) }
+    else
+      { notice: view_context.link_to( t('.success'), resposne.html_url, target: :_blank ) }
     end
 
     redirect_to @result, flash_options

@@ -7,7 +7,7 @@ class GitHubClient
 
   def publish_gist(gist_params, question, user)
     gist = @client.create_gist(gist_params)
-    registegr_gist(gist, question, user)
+    register_gist(gist, question, user)
   end
 
   private

@@ -49,7 +49,7 @@ en:
     passed: "Test passed, score: %{score}"
     not_passed: "Test was not passed, score: %{score}"
     gist:
-      success: 'Gist was successfully created %{url}'
+      success: 'Gist was successfully created'
       failure: 'An error occured while saving gist'
 
   admin:
