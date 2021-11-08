@@ -8,12 +8,11 @@ class GistQuestionService
   end
 
   def call
-    @published_gist = @client.publish_gist(gist_params, @question, @user)
+    @client.publish_gist(gist_params, @question, @user)
   end
 
   private
 
-# TODO: make internationalization to text
   def gist_params
     {
       description: I18n.t('.gist_question', title: @test.title),
