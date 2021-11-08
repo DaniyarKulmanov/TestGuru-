@@ -1,0 +1,14 @@
+<h2><%= t('admin.gists.index.header') %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('admin.gists.index.question', title: nil)%></th>
+      <th><%= t('admin.gists.index.url', level: nil)%></th>
+      <th><%= t('admin.gists.index.email') %></th>
+      <th colspan="4"><%= t('admin.tests.show.actions') %></th>
+    </tr>
+  </thead>
+  <%= render @gists %>
+
+</table>

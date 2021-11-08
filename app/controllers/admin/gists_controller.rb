@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-module Admin
-  class GistsController < ApplicationController
+class Admin::GistsController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    @gists = Gist.all
   end
 end

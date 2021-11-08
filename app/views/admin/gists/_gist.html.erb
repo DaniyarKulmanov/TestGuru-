@@ -1,0 +1,10 @@
+<tbody>
+  <tr>
+    <td><%= link_to short(gist.question.body), admin_question_path(gist.question) %></td>
+    <td><%= link_to gist.guid, gist.html_url, target: :_blank %></td>
+    <td><%= gist.user.email %></td>
+    <td><%= link_to t('delete'), admin_gist_path(gist),
+                    method: :delete,
+                    data: { confirm: t('confirm', object: gist.question.body) } %></td>
+  </tr>
+</tbody>

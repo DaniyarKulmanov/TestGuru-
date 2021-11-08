@@ -53,6 +53,9 @@ en:
       failure: 'An error occured while saving gist'
 
   admin:
+    gists:
+      index:
+        header: 'Total gists'
     tests:
       form:
         prompt: 'Choose category'

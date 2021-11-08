@@ -28,5 +28,6 @@ Rails.application.routes.draw do
         post :begin, to: 'tests#begin'
       end
     end
+    resources :gists, only: %i[index destroy]
   end
 end
