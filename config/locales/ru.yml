@@ -5,8 +5,6 @@ ru:
   delete: 'удалить'
   confirm: "удалить %{object} ?"
   back: 'назад'
-  welcome: 'Добро пожаловать'
-  guru: 'Гуру'
   gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
   gist_filename: 'test-guru-вопрос.txt'
 
@@ -55,6 +53,17 @@ ru:
       failure: 'Гист не создан'
 
   admin:
+    nav:
+      test_guru: 'TestGuru'
+      guru: 'Гуру'
+      welcome: 'Привет'
+      log_out: 'Выход'
+      log_in: 'Войти'
+      sign_up: 'Регистрация'
+      main: 'Главная'
+      gists_list: 'Gists'
+    questions:
+      not_found: 'Вопрос не найден'
     gists:
       index:
         header: 'Все записи gists'
@@ -83,6 +92,15 @@ ru:
         actions: "Действия"
 
   shared:
+    nav:
+      test_guru: 'TestGuru'
+      guru: 'Гуру'
+      welcome: 'Привет'
+      log_out: 'Выход'
+      log_in: 'Войти'
+      sign_up: 'Регистрация'
+      admin_panel: 'Админ'
+      gists_list: 'Gists'
     errors:
       header:
         few: "Обнаружено %{count} ошибки"

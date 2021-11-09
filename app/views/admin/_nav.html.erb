@@ -1,13 +1,15 @@
 <div class="navbar navbar-warning bg-warning">
-  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <%= link_to t('.test_guru'), root_path, class: 'navbar-brand' %>
 
   <span class="navbar-text">
     <% if user_signed_in? %>
+      <%= link_to t('.main'), admin_tests_path %>
+      <%= link_to t('.gists_list'), admin_gists_path %>
       <%= t('.welcome')%>, <b><%= current_user.email %></b> <%= t('.guru')%> |
-      <%= link_to "log out", destroy_user_session_path, method: :delete %>
+      <%= link_to t('.log_out'), destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Log in", new_session_path(resource_name) %> |
-      <%= link_to "Sign up", new_registration_path(resource_name) %>
+      <%= link_to t('.log_in'), new_session_path(resource_name) %> |
+      <%= link_to t('.sign_up'), new_registration_path(resource_name) %>
     <% end %>
   </span>
 </div>
