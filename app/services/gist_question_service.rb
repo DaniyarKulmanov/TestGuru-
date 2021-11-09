@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class GistQuestionService
-  def initialize(result, client: nil)
+  def initialize(result, client = default_client)
     @question = result.current_question
     @test = @question.test
     @user = result.user
-    @client = client || GitHubClient.new
+    @client = client
   end
 
   def call
@@ -26,8 +26,10 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    content = [@question.body, *@question.answers.pluck(:body)].join("\n")
+  end
+
+  def default_client
+    GitHubClient.new
   end
 end
