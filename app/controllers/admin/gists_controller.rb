@@ -26,7 +26,7 @@ class Admin::GistsController < Admin::BaseController
       if @gist.save
         { notice: view_context.link_to( t('.success'), published_gist.html_url, target: :_blank ) }
       else
-        GitHubClient.new.destroy(@gist.guid)
+        GistQuestionService.new(@gist.question).uncall(@gist.guid)
         { alert: t('.failure') }
       end
     end
@@ -36,7 +36,7 @@ class Admin::GistsController < Admin::BaseController
 
   def destroy
     @gist.destroy
-    GitHubClient.new.destroy(@gist.guid)
+    GistQuestionService.new(@gist.question).uncall(@gist.guid)
 
     redirect_to admin_gists_path
   end

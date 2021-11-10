@@ -11,6 +11,10 @@ class GistQuestionService
     @client.publish_gist(gist_params)
   end
 
+  def uncall(gist)
+    @client.destroy(gist)
+  end
+
   private
 
   def gist_params
