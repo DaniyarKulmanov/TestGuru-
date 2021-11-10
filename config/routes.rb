@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :results, only: %i[show update] do
     member do
       get :attempt
-      post :gist
+      # post :gist delete this route
     end
   end
 
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :tests do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, expect: :index
+        resources :gists, only: :create
       end
       member do
         post :begin, to: 'tests#begin'

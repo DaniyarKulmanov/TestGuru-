@@ -5,23 +5,11 @@ class GitHubClient
     @client = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 
-  def publish_gist(gist_params, question, user)
+  def publish_gist(gist_params)
     gist = @client.create_gist(gist_params)
-    register_gist(gist, question, user)
   end
 
   def destroy(gist)
     @client.delete_gist(gist)
-  end
-
-  private
-
-  def register_gist(gist, question, user)
-    Gist.create(
-      html_url: gist[:html_url],
-      guid: gist[:id],
-      user: user,
-      question: question
-    )
   end
 end

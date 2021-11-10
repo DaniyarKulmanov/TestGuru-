@@ -19,18 +19,6 @@ class ResultsController < ApplicationController
     end
   end
 
-  def gist
-    resposne = GistQuestionService.new(@result).call
-
-    flash_options = if resposne.nil?
-      { alert: t('.failure') }
-    else
-      { notice: view_context.link_to( t('.success'), resposne.html_url, target: :_blank ) }
-    end
-
-    redirect_to @result, flash_options
-  end
-
   private
 
   def set_result

@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 class GistQuestionService
-  def initialize(result, client = default_client)
-    @question = result.current_question
+  def initialize(question, client = default_client)
+    @question = question
     @test = @question.test
-    @user = result.user
     @client = client
   end
 
   def call
-    @client.publish_gist(gist_params, @question, @user)
+    @client.publish_gist(gist_params)
   end
 
   private
