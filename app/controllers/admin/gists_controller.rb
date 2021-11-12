@@ -14,15 +14,12 @@ class Admin::GistsController < Admin::BaseController
     gist = GistQuestionService.new(@question).call
     @gist = Gist.new(html_url: gist[:html_url], guid: gist[:id], user: current_user, question: @question)
 
-    flash_options = if gist.nil?
-      { alert: t('.failure') }
+    flash_options = if !gist.nil? && @gist.save
+      { notice: view_context.link_to( t('.success'), gist.html_url, target: :_blank ) }
     else
-      if @gist.save
-        { notice: view_context.link_to( t('.success'), gist.html_url, target: :_blank ) }
-      else
-        GistQuestionService.new(@gist.question).uncall(@gist.guid)
-        { alert: t('.failure') }
-      end
+      GistQuestionService.destroy(@gist.guid) if @gist.errors.any?
+      @gist.destroy if gist.nil?
+      { alert: t('.failure') }
     end
 
     redirect_to Result.current_try(current_user, @question), flash_options
