@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class GistQuestionService
+  def self.destroy(gist)
+    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']).delete_gist(gist)
+  end
+
   def initialize(question, client = default_client)
     @question = question
     @test = @question.test
@@ -8,11 +12,7 @@ class GistQuestionService
   end
 
   def call
-    @client.publish_gist(gist_params)
-  end
-
-  def uncall(gist)
-    @client.destroy(gist)
+    @client.create_gist(gist_params)
   end
 
   private
@@ -33,6 +33,6 @@ class GistQuestionService
   end
 
   def default_client
-    GitHubClient.new
+    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 end

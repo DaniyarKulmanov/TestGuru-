@@ -11,20 +11,14 @@ class Admin::GistsController < Admin::BaseController
 
   def create
     @question = Question.find(params[:question_id])
-    published_gist = GistQuestionService.new(@question).call
-    @gist = Gist.new
+    gist = GistQuestionService.new(@question).call
+    @gist = Gist.new(html_url: gist[:html_url], guid: gist[:id], user: current_user, question: @question)
 
-    # move this to gist_params?
-    @gist.html_url = published_gist[:html_url]
-    @gist.guid = published_gist[:id]
-    @gist.user = current_user
-    @gist.question = @question
-
-    flash_options = if published_gist.nil?
+    flash_options = if gist.nil?
       { alert: t('.failure') }
     else
       if @gist.save
-        { notice: view_context.link_to( t('.success'), published_gist.html_url, target: :_blank ) }
+        { notice: view_context.link_to( t('.success'), gist.html_url, target: :_blank ) }
       else
         GistQuestionService.new(@gist.question).uncall(@gist.guid)
         { alert: t('.failure') }
@@ -36,7 +30,7 @@ class Admin::GistsController < Admin::BaseController
 
   def destroy
     @gist.destroy
-    GistQuestionService.new(@gist.question).uncall(@gist.guid)
+    GistQuestionService.destroy(@gist.guid)
 
     redirect_to admin_gists_path
   end
