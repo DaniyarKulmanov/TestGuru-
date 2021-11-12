@@ -25,7 +25,7 @@ class Admin::GistsController < Admin::BaseController
       end
     end
 
-    redirect_to Result.last, flash_options
+    redirect_to Result.current_try(current_user, @question), flash_options
   end
 
   def destroy
