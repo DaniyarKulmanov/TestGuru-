@@ -48,11 +48,12 @@ ru:
           other: "Всего %{count} вопроса"
     passed: "Тест пройден успешно, баллы: %{score}"
     not_passed: "Тест не пройден, баллы: %{score}"
-    gist:
-      success: 'Гист создан успешно'
-      failure: 'Гист не создан'
+
 
   admin:
+    gists:
+      success: 'Гист создан успешно'
+      failure: 'Гист не создан'
     nav:
       test_guru: 'TestGuru'
       guru: 'Гуру'
