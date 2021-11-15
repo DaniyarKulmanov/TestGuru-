@@ -49,11 +49,7 @@ ru:
     passed: "Тест пройден успешно, баллы: %{score}"
     not_passed: "Тест не пройден, баллы: %{score}"
 
-
   admin:
-    gists:
-      success: 'Гист создан успешно'
-      failure: 'Гист не создан'
     nav:
       test_guru: 'TestGuru'
       guru: 'Гуру'
@@ -65,7 +61,6 @@ ru:
       gists_list: 'Gists'
     questions:
       not_found: 'Вопрос не найден'
-    gists:
       index:
         header: 'Все записи gists'
         question: 'Тело вопроса'
@@ -108,3 +103,7 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+  gists:
+    create:
+      success: 'Гист создан успешно'
+      failure: 'Гист не создан'

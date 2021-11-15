@@ -22,7 +22,6 @@ Rails.application.routes.draw do
     resources :tests do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, expect: :index
-        resources :gists, only: :create
       end
       member do
         post :begin, to: 'tests#begin'
@@ -30,4 +29,6 @@ Rails.application.routes.draw do
     end
     resources :gists, only: %i[index destroy]
   end
+
+  resources :gists, only: :create
 end

@@ -60,11 +60,6 @@ en:
       gists_list: 'Gists list'
     questions:
       not_found: 'Question not found'
-    gists:
-      create:
-        gists:
-          success: 'Gist was successfully created'
-          failure: 'An error occured while saving gist'
       index:
         header: 'Total gists'
         question: 'Question body'
@@ -104,3 +99,7 @@ en:
       header:
         one: "Total %{count} error detected"
         other: "Total %{count} errors detected"
+  gists:
+    create:
+      success: 'Gist was successfully created'
+      failure: 'An error occured while saving gist'

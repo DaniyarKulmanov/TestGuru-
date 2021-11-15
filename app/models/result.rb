@@ -10,12 +10,8 @@ class Result < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
-  def self.current_try(user, question)
-    Result.where(
-      user: user,
-      test: question.test,
-      current_question: question
-    ).last
+  def self.current_try(user)
+    where(user: user).last
   end
 
   def accept!(answer_ids)

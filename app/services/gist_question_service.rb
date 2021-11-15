@@ -2,7 +2,8 @@
 
 class GistQuestionService
   def self.destroy(gist)
-    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']).delete_gist(gist)
+    token = ENV.fetch('GIST_CREATE_TOKEN')
+    Octokit::Client.new(access_token: token ).delete_gist(gist)
   end
 
   def initialize(question, client = default_client)
