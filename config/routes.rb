@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :results, only: %i[show update] do
+    resources :gists, only: :create
     member do
       get :attempt
     end
@@ -29,6 +30,4 @@ Rails.application.routes.draw do
     end
     resources :gists, only: %i[index destroy]
   end
-
-  resources :gists, only: :create
 end
