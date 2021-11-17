@@ -47,4 +47,3 @@ yarn-debug.log*
 
 # Ignore env
 .env
-.env.example
