@@ -5,8 +5,8 @@ en:
   delete: 'delete'
   confirm: "Delete %{object}?"
   back: "back"
-  welcome: 'Welcome'
-  guru: 'Guru'
+  gist_question: 'A question about %{title} from TestGuru'
+  gist_filename: 'test-guru-question.txt'
 
   test:
     start: "Go!"
@@ -38,6 +38,7 @@ en:
       next: "Next question"
       current_question: "Current question id: %{question_id}"
       answers: "Answers:"
+      gist_question: "Gist Question"
       total:
         questions:
           zero: "Total no questions"
@@ -46,7 +47,29 @@ en:
     passed: "Test passed, score: %{score}"
     not_passed: "Test was not passed, score: %{score}"
 
+
   admin:
+    gists:
+      destroy:
+        success: 'Gist %{id} was successfully deleted'
+        failure: 'An error occured while deleting gist'
+    nav:
+      test_guru: 'TestGuru'
+      guru: 'Guru'
+      log_out: 'log out'
+      log_in: 'Log in'
+      sign_up: 'Sing up'
+      welcome: 'Welcome'
+      main: 'Main'
+      gists_list: 'Gists list'
+    questions:
+      not_found: 'Question not found'
+      index:
+        header: 'Total gists'
+        question: 'Question body'
+        url: 'Link'
+        email: 'User email'
+        delete: 'Delete'
     tests:
       form:
         prompt: 'Choose category'
@@ -67,7 +90,20 @@ en:
         body: "Text"
         actions: "Actions"
   shared:
+    nav:
+      test_guru: 'TestGuru'
+      guru: 'Guru'
+      log_out: 'log out'
+      log_in: 'Log in'
+      sign_up: 'Sing up'
+      welcome: 'Welcome'
+      admin_panel: 'Admin panel'
+      gists_list: 'Gists list'
     errors:
       header:
         one: "Total %{count} error detected"
         other: "Total %{count} errors detected"
+  gists:
+    create:
+      success: 'Gist was successfully created'
+      failure: 'An error occured while saving gist'

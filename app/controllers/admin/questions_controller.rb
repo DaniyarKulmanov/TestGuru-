@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   before_action :authenticate_user!
   before_action :set_question, only: %i[show edit update destroy]
   before_action :set_test, only: %i[new create]
@@ -49,7 +49,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Question not found'
+    render plain: t('.not_found')
   end
 
   def question_params

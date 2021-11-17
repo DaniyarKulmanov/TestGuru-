@@ -2,7 +2,7 @@
 
 class ResultsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_result, only: %i[show attempt update]
+  before_action :set_result, only: %i[show attempt update gist]
 
   def show; end
 
@@ -24,4 +24,5 @@ class ResultsController < ApplicationController
   def set_result
     @result = Result.find(params[:id])
   end
+
 end

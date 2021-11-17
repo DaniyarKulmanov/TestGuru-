@@ -3,10 +3,10 @@ ru:
   show: 'просмотр'
   edit: 'изменить'
   delete: 'удалить'
-  confirm: 'Удалить %{object}?'
+  confirm: "удалить %{object} ?"
   back: 'назад'
-  welcome: 'Добро пожаловать'
-  guru: 'Гуру'
+  gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
+  gist_filename: 'test-guru-вопрос.txt'
 
   test:
     start: "Начать!"
@@ -39,6 +39,7 @@ ru:
       next: "Следующий вопрос"
       current_question: "Текущий вопрос №: %{question_id}"
       answers: "Ответы:"
+      gist_question: 'Отправить вопрос в гист'
       total:
         questions:
           few: "Всего %{count} вопроса"
@@ -49,6 +50,27 @@ ru:
     not_passed: "Тест не пройден, баллы: %{score}"
 
   admin:
+    gists:
+      destroy:
+        success: 'Гист %{id} успешно удален'
+        failure: 'Ошибка при удалении гиста'
+    nav:
+      test_guru: 'TestGuru'
+      guru: 'Гуру'
+      welcome: 'Привет'
+      log_out: 'Выход'
+      log_in: 'Войти'
+      sign_up: 'Регистрация'
+      main: 'Главная'
+      gists_list: 'Gists'
+    questions:
+      not_found: 'Вопрос не найден'
+      index:
+        header: 'Все записи gists'
+        question: 'Тело вопроса'
+        url: 'Ссылка'
+        email: 'Почта пользователя'
+        delete: 'Удалить'
     tests:
       form:
         prompt: 'Выбрать категорию'
@@ -70,9 +92,22 @@ ru:
         actions: "Действия"
 
   shared:
+    nav:
+      test_guru: 'TestGuru'
+      guru: 'Гуру'
+      welcome: 'Привет'
+      log_out: 'Выход'
+      log_in: 'Войти'
+      sign_up: 'Регистрация'
+      admin_panel: 'Админ'
+      gists_list: 'Gists'
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+  gists:
+    create:
+      success: 'Гист создан успешно'
+      failure: 'Гист не создан'
