@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GistDelete < GistQuestionService
+class Gist::GistDelete < Gist::GistQuestionService
   Gist = Struct.new(:id, :success?)
 
   def initialize(id, client = default_client)

@@ -9,7 +9,7 @@ class Admin::GistsController < Admin::BaseController
 
   def destroy
     @gist = Gist.find(params[:id])
-    result = GistDelete.new(@gist.guid).call
+    result = Gist::GistDelete.new(@gist.guid).call
 
     if result.success?
       flash[:notice] = t('.success', id: result.id)

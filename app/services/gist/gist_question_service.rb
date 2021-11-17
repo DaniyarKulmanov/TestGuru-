@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GistQuestionService
+class Gist::GistQuestionService
   def initialize(client = default_client)
     @client = client
   end
