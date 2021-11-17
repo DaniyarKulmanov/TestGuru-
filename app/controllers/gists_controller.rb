@@ -7,11 +7,11 @@ class GistsController < ApplicationController
     @result = Result.find(params[:result_id])
     @question = @result.current_question
 
-    response = GistCreate.new(@question).call
+    result = GistCreate.new(@question).call
 
-    if response.success?
-      flash[:notice] = view_context.link_to(t('.success'), response.url, target: :_blank)
-      @gist = Gist.new(html_url: response.url, guid: response.id, user: current_user, question: @question)
+    if result.success?
+      flash[:notice] = view_context.link_to(t('.success'), result.url, target: :_blank)
+      @gist = Gist.create(html_url: result.url, guid: result.id, user: current_user, question: @question)
     else
       flash[:alert] = t('.failure')
     end

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class GistDelete < GistQuestionService
-  Response = Struct.new(:id, :success?)
+  Gist = Struct.new(:id, :success?)
 
-  def initialize(gist, client = default_client)
+  def initialize(id, client = default_client)
     super(client)
-    @gist = gist
+    @id = id
   end
 
   def call
-    Response.new(@gist, @client.delete_gist(@gist))
+    Gist.new(@id, @client.delete_gist(@id))
   end
 end
