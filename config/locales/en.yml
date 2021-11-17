@@ -49,6 +49,10 @@ en:
 
 
   admin:
+    gists:
+      destroy:
+        success: 'Gist %{id} was successfully deleted'
+        failure: 'An error occured while deleting gist'
     nav:
       test_guru: 'TestGuru'
       guru: 'Guru'

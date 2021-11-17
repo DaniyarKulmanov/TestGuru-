@@ -50,6 +50,10 @@ ru:
     not_passed: "Тест не пройден, баллы: %{score}"
 
   admin:
+    gists:
+      destroy:
+        success: 'Гист %{id} успешно удален'
+        failure: 'Ошибка при удалении гиста'
     nav:
       test_guru: 'TestGuru'
       guru: 'Гуру'

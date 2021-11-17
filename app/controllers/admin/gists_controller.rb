@@ -9,8 +9,14 @@ class Admin::GistsController < Admin::BaseController
 
   def destroy
     @gist = Gist.find(params[:id])
-    @gist.destroy
-    GistQuestionService.destroy(@gist.guid)
+    response = GistDelete.new(@gist.guid).call
+
+    if response.success?
+      flash[:notice] = t('.success', id: response.id)
+      @gist.destroy
+    else
+      flash[:alert] = t('.failure')
+    end
 
     redirect_to admin_gists_path
   end
