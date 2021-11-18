@@ -3,7 +3,7 @@ ru:
   show: 'просмотр'
   edit: 'изменить'
   delete: 'удалить'
-  confirm: "удалить %{object} ?"
+  confirm: "удалить %{name}?"
   back: 'назад'
   gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
   gist_filename: 'test-guru-вопрос.txt'
