@@ -18,7 +18,19 @@ function sortRowsByTitle() {
     sortedRows.push(rows[n])
   }
 
-  sortedRows.sort(compareRowsAsc)
+  // check sort type by icon display
+  let arrowUpClassList = this.querySelector('.octicon-arrow-up').classList
+  let arrowDownClassList = this.querySelector('.octicon-arrow-down').classList
+
+  if (arrowUpClassList.contains('hide')) {
+    arrowUpClassList.remove('hide')
+    arrowDownClassList.add('hide')
+    sortedRows.sort(compareRowsAsc)
+  } else {
+    arrowUpClassList.add('hide')
+    arrowDownClassList.remove('hide')
+    sortedRows.sort(compareRowsDsc)
+  }
 
   let sortedTable = document.createElement('table')
   let thead = document.createElement('thead')
