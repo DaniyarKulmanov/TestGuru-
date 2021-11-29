@@ -1,7 +1,7 @@
 document.addEventListener('turbolinks:load', function() {
   let control = document.querySelector('.sort-by-title')
 
-  control.addEventListener('click', sortRowsByTitle)
+  if (control) { control.addEventListener('click', sortRowsByTitle) }
 })
 
 
@@ -18,11 +18,10 @@ function sortRowsByTitle() {
     sortedRows.push(rows[n])
   }
 
-  sortedRows.sort(compareRows)
+  sortedRows.sort(compareRowsAsc)
 
   let sortedTable = document.createElement('table')
   let thead = document.createElement('thead')
-  let tbody = document.createElement('tbody')
 
   thead.appendChild(rows[0])
   sortedTable.classList.add('table')
@@ -30,19 +29,27 @@ function sortRowsByTitle() {
 
   for (let n = 0; n < sortedRows.length; n++) {
     let tbody = document.createElement('tbody')
-    tbody.appendChild(sortedRows[n]) // need to insert tbody? incorrect html
-    sortedTable.appendChild(tbody) // need to insert tbody? incorrect html
+    tbody.appendChild(sortedRows[n])
+    sortedTable.appendChild(tbody)
   }
-  console.log(table)
-  console.log(sortedTable)
+
   table.parentNode.replaceChild(sortedTable, table)
 }
 
-function compareRows(row1, row2) {
+function compareRowsAsc(row1, row2) {
   let testTitle1 = row1.querySelector('td').textContent
   let testTitle2 = row2.querySelector('td').textContent
 
   if (testTitle1 < testTitle2) { return -1 }
   if (testTitle1 > testTitle2) { return 1 }
+  return 0
+}
+
+function compareRowsDsc(row1, row2) {
+  let testTitle1 = row1.querySelector('td').textContent
+  let testTitle2 = row2.querySelector('td').textContent
+
+  if (testTitle1 < testTitle2) { return 1 }
+  if (testTitle1 > testTitle2) { return -1 }
   return 0
 }
