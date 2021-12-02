@@ -1,4 +1,3 @@
-// TODO: add to registraion edit
 document.addEventListener('turbolinks:load', function() {
   let userPasswordConfirm = document.querySelector('#user_password_confirmation')
 
