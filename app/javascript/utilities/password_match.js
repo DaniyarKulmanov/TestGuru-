@@ -1,4 +1,4 @@
-// TODO: only on registration views
+// TODO: add to registraion edit
 document.addEventListener('turbolinks:load', function() {
   let userPasswordConfirm = document.querySelector('#user_password_confirmation')
 
@@ -7,11 +7,15 @@ document.addEventListener('turbolinks:load', function() {
 })
 
 function passwordMathCheck() {
+  let password = document.querySelector('#user_password')
+  let passwordConfirmation = document.querySelector('#user_password_confirmation')
 
-  if (document.getElementById('user_password').value ==
-      document.getElementById('user_password_confirmation').value) {
-      console.log('match')
-    } else {
-      console.log('not match')
-    }
+  if (password.value == passwordConfirmation.value) {
+    console.log('match')
+  } else if (passwordConfirmation.textLength == 0) {
+    console.log('empty configmation')
+  } else {
+    console.log('not match')
+  }
+
 }
