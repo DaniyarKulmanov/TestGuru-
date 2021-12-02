@@ -8,14 +8,21 @@ document.addEventListener('turbolinks:load', function() {
 
 function passwordMathCheck() {
   let password = document.querySelector('#user_password')
-  let passwordConfirmation = document.querySelector('#user_password_confirmation')
+  let passwordConfirm = document.querySelector('#user_password_confirmation')
 
-  if (password.value == passwordConfirmation.value) {
-    console.log('match')
-  } else if (passwordConfirmation.textLength == 0) {
-    console.log('empty configmation')
+  // read all icon for positive and negative
+  let circleSlash = document.querySelectorAll('.octicon-circle-slash')
+  let checkCircle = document.querySelectorAll('.octicon-check-circle')
+
+  if (password.value == passwordConfirm.value) {
+    circleSlash.forEach(icon => { icon.classList.add('hide') })
+    checkCircle.forEach(icon => { icon.classList.remove('hide') })
+  } else if (passwordConfirm.textLength == 0) {
+    circleSlash.forEach(icon => { icon.classList.add('hide') })
+    checkCircle.forEach(icon => { icon.classList.add('hide') })
   } else {
-    console.log('not match')
+    circleSlash.forEach(icon => { icon.classList.remove('hide') })
+    checkCircle.forEach(icon => { icon.classList.add('hide') })
   }
 
 }
