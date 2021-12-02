@@ -1,3 +1,4 @@
+// TODO: add for other fields not only title
 document.addEventListener('turbolinks:load', function() {
   let control = document.querySelector('.sort-by-title')
 

@@ -16,3 +16,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require("utilities/sorting")
+require("utilities/password_match")
