@@ -10,8 +10,8 @@ class Gist::GistCreate < Gist::GistQuestionService
   end
 
   def call
-    response = @client.create_gist(gist_params)
-    Gist.new(response.html_url, response.id, response.url.present?)
+    result = @client.create_gist(gist_params)
+    Gist.new(result.html_url, result.id, result.url.present?)
   end
 
   private

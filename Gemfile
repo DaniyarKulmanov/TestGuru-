@@ -36,6 +36,7 @@ gem 'devise', '~> 4.0'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.0'
+gem 'octicons_helper'
 
 # NETWORKING
 gem "octokit", "~> 4.0"

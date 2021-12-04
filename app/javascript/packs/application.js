@@ -14,3 +14,6 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("utilities/sorting")
+require("utilities/password_match")

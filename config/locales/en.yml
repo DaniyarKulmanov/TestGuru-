@@ -3,7 +3,7 @@ en:
   show: 'display'
   edit: 'edit'
   delete: 'delete'
-  confirm: "Delete %{object}?"
+  confirm: "Delete %{name}?"
   back: "back"
   gist_question: 'A question about %{title} from TestGuru'
   gist_filename: 'test-guru-question.txt'
