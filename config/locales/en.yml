@@ -71,6 +71,8 @@ en:
         email: 'User email'
         delete: 'Delete'
     tests:
+      form_inline:
+        submit: 'ok'
       form:
         prompt: 'Choose category'
       index:

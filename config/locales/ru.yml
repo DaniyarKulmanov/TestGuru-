@@ -72,6 +72,8 @@ ru:
         email: 'Почта пользователя'
         delete: 'Удалить'
     tests:
+      form_inline:
+        submit: 'ok'
       form:
         prompt: 'Выбрать категорию'
       index:
