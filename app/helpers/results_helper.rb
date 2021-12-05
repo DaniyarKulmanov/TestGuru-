@@ -31,7 +31,7 @@ module ResultsHelper
                             'role' => 'progressbar',
                             'style' => "width: 0%",
                             data: { questions_max: @result.test.questions.length,
-                                    question_index: @result.test.questions.find_index(@result.current_question) }),
+                                    current_question_number: @result.test.questions.find_index(@result.current_question) }),
                 class: 'progress')
   end
 end
