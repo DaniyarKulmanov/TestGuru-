@@ -4,6 +4,18 @@
 
 <p><%= t('.current_question', question_id: @result.current_question.id ) %></p>
 
+<%= content_tag :div,
+                content_tag(:div, "25%",
+                class: "progress-bar",
+                role: "progressbar",
+                'aria-valuemax' => 100,
+                'aria-valuemin' => 0,
+                'aria-valuenow' => 25,
+                style: "width: 25%" ,
+                data: { questions_max: @result.test.questions.length,
+                        question_index: @result.test.questions.find_index(@result.current_question) }),
+                class: "progress" %>
+
 <p>
   <b><%= @result.current_question.body %></b>
 </p>

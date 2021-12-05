@@ -20,4 +20,8 @@ module ResultsHelper
       tests_path
     end
   end
+  # TODO: content_tag by helper
+  def progressbar(value)
+
+  end
 end
