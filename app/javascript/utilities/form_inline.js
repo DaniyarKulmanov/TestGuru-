@@ -5,13 +5,13 @@ document.addEventListener('turbolinks:load', function() {
     for (let i = 0; i < inlineForms.length; i++) {
       inlineForms[i].addEventListener('click', formInlineLinkHandler)
     }
-  }
 
-  let errors = document.querySelector('.resource-errors')
+    let errors = document.querySelector('.resource-errors')
 
-  if (errors) {
-    let resourceId = errors.dataset.resourceId
-    formInlineHandler(resourceId)
+    if (errors) {
+      let resourceId = errors.dataset.resourceId
+      formInlineHandler(resourceId)
+    }
   }
 })
 
