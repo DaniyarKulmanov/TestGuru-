@@ -20,8 +20,18 @@ module ResultsHelper
       tests_path
     end
   end
-  # TODO: content_tag by helper
-  def progressbar(value)
 
+  def progressbar_html
+    content_tag(:div,
+                content_tag(:div, nil,
+                            class: "progress-bar",
+                            'aria-valuemax' => 100,
+                            'aria-valuemin' => 0,
+                            'aria-valuenow' => 0,
+                            'role' => 'progressbar',
+                            'style' => "width: 0%",
+                            data: { questions_max: @result.test.questions.length,
+                                    question_index: @result.test.questions.find_index(@result.current_question) }),
+                class: 'progress')
   end
 end
