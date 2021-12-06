@@ -4,6 +4,8 @@
 
 <p><%= t('.current_question', question_id: @result.current_question.id ) %></p>
 
+<%= progressbar_html %>
+
 <p>
   <b><%= @result.current_question.body %></b>
 </p>

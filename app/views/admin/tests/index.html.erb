@@ -2,6 +2,8 @@
 
 <p><%= link_to t('admin.tests.new.header'), new_admin_test_path(@test) %></p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table">
   <thead>
     <tr>
