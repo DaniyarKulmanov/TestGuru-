@@ -105,7 +105,13 @@ en:
       header:
         one: "Total %{count} error detected"
         other: "Total %{count} errors detected"
+    footer:
+      current_year: "Year:"
+      feedback: "leave feedback"
   gists:
     create:
       success: 'Gist was successfully created'
       failure: 'An error occured while saving gist'
+  feedbacks:
+    create:
+      success: "Feedback sent"

@@ -1,9 +1,12 @@
 class FeedbacksController < ApplicationController
+  before_action :authenticate_user!
+
   def new
 
   end
-  # TODO refactor to custom action send_mail
+
   def create
-    render plain: 'Feedback sent'
+    flash[:alert] = t('.success')
+    redirect_to root_path
   end
 end

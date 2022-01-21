@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-# TODO move to env
-PASSWORD = 'Qwe123'.freeze
+
+PASSWORD = ENV.fetch('INITIAL_PASSWORD')
 
 5.times do
   User.create(email: Faker::Internet.email,

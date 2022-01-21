@@ -109,7 +109,13 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    footer:
+      current_year: "Год:"
+      feedback: "оставить отзыв"
   gists:
     create:
       success: 'Гист создан успешно'
       failure: 'Гист не создан'
+  feedbacks:
+    create:
+      success: "Отзыв отправлен"

@@ -1,9 +1,10 @@
 <h5>Footer:</h5>
 
 <footer>
-  <p>current year: <%= current_year %></p>
+  <p><%= t('.current_year') %> <%= current_year %></p>
   <p><%= github_url('DaniyarKulmanov', 'TestGuru-') %></p>
   <p>Суть проекта создания ресурса для прохождения тестирования знаний программирования</p>
   <p><%= github_url('DaniyarKulmanov') %></p>
   <p><%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'https://thinknetica.com/',target: '_blank' %></p>
+  <p><%= link_to t('.feedback'), new_feedback_path %></p>
 </footer>
