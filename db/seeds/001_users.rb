@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# TODO move to env
 PASSWORD = 'Qwe123'.freeze
 
 5.times do

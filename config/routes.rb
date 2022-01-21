@@ -6,6 +6,8 @@ Rails.application.routes.draw do
                      controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   root 'tests#index'
 
+  resources :feedbacks, only: %i[new create]
+
   resources :tests, only: :index do
     member do
       post :begin
