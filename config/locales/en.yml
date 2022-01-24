@@ -107,7 +107,7 @@ en:
         other: "Total %{count} errors detected"
     footer:
       current_year: "Year:"
-      feedback: "leave feedback"
+      feedback: "Leave feedback"
   gists:
     create:
       success: 'Gist was successfully created'
