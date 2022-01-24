@@ -1,0 +1,2 @@
+class FeedbacksMailer < ApplicationMailer
+end
