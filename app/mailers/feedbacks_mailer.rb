@@ -3,7 +3,7 @@
 class FeedbacksMailer < ApplicationMailer
   default to: -> { Admin.pluck(:email) }
 
-  def feedback_created_notification(user, body)
+  def created_notification(user, body)
     @user = user
     @body = body
 

@@ -4,6 +4,6 @@ class FeedbacksMailerPreview < ActionMailer::Preview
     @user = User.first
     @body = 'Test text'
 
-    FeedbacksMailer.feedback_created_notification(@user, @body)
+    FeedbacksMailer.created_notification(@user, @body)
   end
 end
