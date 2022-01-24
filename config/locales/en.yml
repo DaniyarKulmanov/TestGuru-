@@ -115,7 +115,11 @@ en:
   feedbacks:
     create:
       success: "Feedback sent"
-      failure: "Not sent, please enter feedback body"
+      failure: "Not sent, please enter feedback text message"
+    new:
+      send: "send"
+      header: "Feedback"
+      body: "text message here"
   feedbacks_mailer:
     created_notification:
       title: "New Feedback!"

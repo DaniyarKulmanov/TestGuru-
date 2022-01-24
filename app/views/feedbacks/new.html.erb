@@ -1,5 +1,7 @@
+<h1><%= t('.header') %></h1>
+
 <%= form_for :feedback, url: feedbacks_path do |form| %>
-  <%= form.label :body %><br>
-  <%= form.text_area :body %><br>
-  <%= form.submit  %>
+  <%= form.label t('.body'), class: 'card-title' %><br>
+  <%= form.text_area :body, class: 'form-control' %><br>
+  <%= form.submit t('.send'), class: 'btn btn-info' %>
 <% end  %>
