@@ -9,9 +9,13 @@ class FeedbacksController < ApplicationController
     @user = current_user
     @body = params[:feedback][:body]
 
-    flash[:alert] = t('.success')
-
-    FeedbacksMailer.created_notification(@user, @body).deliver_now
-    redirect_to root_path
+    if @body.present?
+      flash[:alert] = t('.success')
+      FeedbacksMailer.created_notification(@user, @body).deliver_now
+      redirect_to root_path
+    else
+      flash[:alert] = t('.failure')
+      render :new
+    end
   end
 end

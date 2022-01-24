@@ -119,7 +119,8 @@ ru:
   feedbacks:
     create:
       success: "Отзыв отправлен"
+      failure: "Не отправлено, пожалуйста заполните отзыв"
   feedbacks_mailer:
-    feedback_created_notification:
+    created_notification:
       title: "Новый отзыв!"
       feedback: "Новый отзыв от пользователя: %{user}"

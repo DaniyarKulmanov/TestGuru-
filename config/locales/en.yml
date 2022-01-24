@@ -115,7 +115,8 @@ en:
   feedbacks:
     create:
       success: "Feedback sent"
+      failure: "Not sent, please enter feedback body"
   feedbacks_mailer:
-    feedback_created_notification:
+    created_notification:
       title: "New Feedback!"
       feedback: "New feedback from: %{user}"
