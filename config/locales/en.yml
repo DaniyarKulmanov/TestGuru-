@@ -115,3 +115,7 @@ en:
   feedbacks:
     create:
       success: "Feedback sent"
+  feedbacks_mailer:
+    feedback_created_notification:
+      title: "New Feedback!"
+      feedback: "New feedback from: %{user}"
