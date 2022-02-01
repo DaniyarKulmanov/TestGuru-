@@ -128,3 +128,15 @@ ru:
     created_notification:
       title: "Новый отзыв!"
       feedback: "Новый отзыв от пользователя: %{user}"
+  users:
+    sessions:
+      new:
+        log_in: "Войти"
+        email: "почта"
+        password: "пароль"
+        remember_me: "запомнить меня"
+        enter: "Войти"
+    registrations:
+      new:
+        become_guru: "Стань гуру Ruby on Rails"
+        sign_up: "Зарегистрироваться"

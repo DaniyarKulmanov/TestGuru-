@@ -124,3 +124,15 @@ en:
     created_notification:
       title: "New Feedback!"
       feedback: "New feedback from: %{user}"
+  users:
+    sessions:
+      new:
+        log_in: "Log in"
+        email: "email"
+        password: "password"
+        remember_me: "remember me"
+        enter: "Enter"
+    registrations:
+      new:
+        become_guru: "Become a Ruby on Rails Guru"
+        sign_up: "Sign up"

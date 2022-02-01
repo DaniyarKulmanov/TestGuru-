@@ -17,9 +17,11 @@ ru:
         level: "Уровень"
         category: 'Категория'
       user:
-        email: 'email'
+        email: 'Почта'
         first_name: "Имя"
         last_name: "Фамилия"
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
       result:
         correct_questions: "количество правильных ответов"
       question:
