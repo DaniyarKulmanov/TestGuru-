@@ -133,6 +133,8 @@ en:
         password: "password"
         remember_me: "remember me"
         enter: "Enter"
+        enter_email: "Enter email"
+        enter_password: "Enter password"
     registrations:
       new:
         become_guru: "Become a Ruby on Rails Guru"

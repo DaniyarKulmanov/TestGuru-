@@ -137,6 +137,8 @@ ru:
         password: "пароль"
         remember_me: "запомнить меня"
         enter: "Войти"
+        enter_email: "Введите почту"
+        enter_password: "Введите пароль"
     registrations:
       new:
         become_guru: "Стань гуру Ruby on Rails"
