@@ -139,6 +139,7 @@ en:
       new:
         become_guru: "Become a Ruby on Rails Guru"
         sign_up: "Sign up"
+        min_password_length: "%{length} characters minimum"
     passwords:
       new:
         reset_instructions: "Send me reset password instructions"

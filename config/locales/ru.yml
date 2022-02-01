@@ -143,6 +143,7 @@ ru:
       new:
         become_guru: "Стань гуру Ruby on Rails"
         sign_up: "Зарегистрироваться"
+        min_password_length: "Не менее %{length} символов"
     passwords:
       new:
         reset_instructions: "Отправить мне инструкции по сбросу пароля"
