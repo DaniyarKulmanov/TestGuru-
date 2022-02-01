@@ -108,6 +108,7 @@ en:
     footer:
       current_year: "Year:"
       feedback: "Leave feedback"
+      footer: "Information and links:"
   gists:
     create:
       success: 'Gist was successfully created'
@@ -136,3 +137,7 @@ en:
       new:
         become_guru: "Become a Ruby on Rails Guru"
         sign_up: "Sign up"
+    passwords:
+      new:
+        reset_instructions: "Send me reset password instructions"
+  forgot: "Forgot password?"

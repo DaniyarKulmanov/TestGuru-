@@ -112,6 +112,7 @@ ru:
     footer:
       current_year: "Год:"
       feedback: "Оставить отзыв"
+      footer: "Ссылки и информация:"
   gists:
     create:
       success: 'Гист создан успешно'
@@ -140,3 +141,7 @@ ru:
       new:
         become_guru: "Стань гуру Ruby on Rails"
         sign_up: "Зарегистрироваться"
+    passwords:
+      new:
+        reset_instructions: "Отправить мне инструкции по сбросу пароля"
+  forgot: "Забыли пароль?"
