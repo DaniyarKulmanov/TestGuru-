@@ -8,10 +8,15 @@ ru:
         other: "%{count} пользователя"
       admin: "Администратор"
       test: "Тест"
-      question: "Вопрос"
+      question:
+        one: "Вопрос"
+        many: "Вопросы"
       answer:
         one: "Ответ"
         many: "Ответов"
+      gist:
+        one: "Гист"
+        many: "Гисты"
 
     attributes:
       test:
@@ -33,6 +38,10 @@ ru:
       answer:
         body: "Тело"
         correct: "правильный"
+      gist:
+        question_url: "Ссылка на вопрос"
+        gist_url: "Ссылка на гист"
+        email: "Автор гиста"
 
     errors:
       models:

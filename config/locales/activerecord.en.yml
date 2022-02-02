@@ -16,6 +16,9 @@ en:
       answer:
         one: 'Answer'
         many: 'Answers'
+      gist:
+        one: 'Gist'
+        many: "Gists"
 
     attributes:
       test:
@@ -37,6 +40,10 @@ en:
       answer:
         body: 'body'
         correct: 'correct'
+      gist:
+        question_url: "Question link"
+        gist_url: "Gist link"
+        email: "Gist author"
 
     errors:
       models:
