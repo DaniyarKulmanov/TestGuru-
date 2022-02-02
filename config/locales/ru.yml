@@ -5,17 +5,13 @@ ru:
   delete: 'удалить'
   confirm: "удалить %{name}?"
   back: 'назад'
+  actions: 'Действия'
+  new: "Новый %{name}"
   gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
   gist_filename: 'test-guru-вопрос.txt'
 
   test:
     start: "Начать!"
-
-  helpers:
-    submit:
-      test:
-        create: 'Создать тест'
-        update: 'Обновить тест'
 
     label:
       test:
@@ -148,3 +144,8 @@ ru:
       new:
         reset_instructions: "Отправить мне инструкции по сбросу пароля"
   forgot: "Забыли пароль?"
+  change: "Изменить %{name}"
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"

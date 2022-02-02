@@ -5,17 +5,13 @@ en:
   delete: 'delete'
   confirm: "Delete %{name}?"
   back: "back"
+  actions: 'Actions'
+  new: "New %{name}"
   gist_question: 'A question about %{title} from TestGuru'
   gist_filename: 'test-guru-question.txt'
 
   test:
     start: "Go!"
-
-  helpers:
-    submit:
-      test:
-        create: 'Create test'
-        update: 'Update test'
 
     label:
       test:
@@ -144,3 +140,8 @@ en:
       new:
         reset_instructions: "Send me reset password instructions"
   forgot: "Forgot password?"
+  change: "Edit %{name}"
+  helpers:
+    submit:
+      create: "Create a %{model}"
+      update: "Update a %{model}"

@@ -1,3 +1,3 @@
-<h3>Answer body: <%= @answer.body %></h3>
+<h3><%= t('activerecord.attributes.answer.body') %>: <%= @answer.body %></h3>
 
-<p> <%= link_to 'back', admin_question_path(@answer.question_id) %> </p>
+<p> <%= link_to t('back'), admin_question_path(@answer.question_id) %> </p>

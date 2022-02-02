@@ -17,7 +17,7 @@
       <%= link_to t('delete'),
                   admin_test_path(test),
                   method: :delete,
-                  data: { confirm: t('confirm', object: test.title) } %></td>
+                  data: { confirm: t('confirm', name: test.title) } %></td>
     <td class="align-middle"><%= button_to t('test.start'), begin_test_path(test) %></td>
   </tr>
 </tbody>

@@ -15,7 +15,7 @@ en:
         other: 'Questions'
       answer:
         one: 'Answer'
-        other: 'Answers'
+        many: 'Answers'
 
     attributes:
       test:

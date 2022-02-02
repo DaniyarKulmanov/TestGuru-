@@ -9,7 +9,9 @@ ru:
       admin: "Администратор"
       test: "Тест"
       question: "Вопрос"
-      answer: "Ответ"
+      answer:
+        one: "Ответ"
+        many: "Ответов"
 
     attributes:
       test:
