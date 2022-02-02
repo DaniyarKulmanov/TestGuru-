@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 class FeedbacksController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-
-  end
+  def new; end
 
   def create
     @user = current_user
