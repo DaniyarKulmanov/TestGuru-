@@ -1,7 +1,7 @@
 ru:
   hello: 'Привет Мир'
   show: 'просмотр'
-  edit: 'изменить'
+  edit: 'изменить %{name}'
   delete: 'удалить'
   confirm: "удалить %{name}?"
   back: 'назад'
@@ -84,10 +84,6 @@ ru:
       show:
         title: "Название теста %{title}"
         level: "Уровень %{level}"
-        question: "Добавить новый вопрос"
-        questions: "Вопросы:"
-        body: "Текст"
-        actions: "Действия"
 
   shared:
     nav:

@@ -2,7 +2,7 @@
 <tr>
   <td class="text-center"><%= answer.body %></td>
   <td class="text-center"><%= link_to t('show'), admin_answer_path(answer) %></td>
-  <td class="text-center"><%= link_to t('edit'), edit_admin_answer_path(answer) %></td>
+  <td class="text-center"><%= link_to t('edit', name: nil), edit_admin_answer_path(answer) %></td>
   <td class="text-center"><%= link_to t('delete'), admin_answer_path(answer),
                   method: :delete,
                   data: { confirm: t('confirm', name: answer.body) } %></td>

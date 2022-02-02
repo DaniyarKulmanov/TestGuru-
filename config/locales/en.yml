@@ -1,7 +1,7 @@
 en:
   hello: "Hello world"
   show: 'display'
-  edit: 'edit'
+  edit: 'edit %{name}'
   delete: 'delete'
   confirm: "Delete %{name}?"
   back: "back"
@@ -83,10 +83,6 @@ en:
       show:
         title: "Test name %{title}"
         level: "Level %{level}"
-        question: "Add new question"
-        questions: "Questions:"
-        body: "Text"
-        actions: "Actions"
   shared:
     nav:
       test_guru: 'TestGuru'
