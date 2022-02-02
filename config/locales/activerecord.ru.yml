@@ -51,8 +51,10 @@ ru:
             email:
               blank: "укажите электронную почту"
               invalid: "Не верный формат электронной почты"
+              taken: 'уже используется, укажите другую почту'
             password:
               blank: "Укажите пароль"
+              too_short: 'склишком короткий'
             password_confirmation:
               confirmation: "Подтвердите пароль"
             first_name:
