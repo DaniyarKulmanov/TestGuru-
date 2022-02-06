@@ -120,10 +120,14 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     ffi (1.15.4)
+    glob (0.2.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    i18n-js (4.0.0.alpha2)
+      glob
+      i18n
     jbuilder (2.11.3)
       activesupport (>= 5.0.0)
     jquery-rails (4.4.0)
@@ -283,6 +287,7 @@ DEPENDENCIES
   devise (~> 4.0)
   dotenv-rails
   faker
+  i18n-js (~> 4.0.0.alpha1)
   jbuilder (~> 2.7)
   jquery-rails
   letter_opener
