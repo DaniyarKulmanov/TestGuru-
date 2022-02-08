@@ -26,17 +26,18 @@ function formInlineLinkHandler(event) {
 
 function formInlineHandler(testId){
   const i18n = new I18n({
-    en: {
+    "en": {
       cancel: "cancel",
       edit: 'edit',
     },
-    "ru-RU": {
+    "ru": {
       cancel: 'отмена',
       edit: 'изменить',
     }
   });
-  const locale = document.querySelector('navbar-brand')
-  i18n.locale = locale.dataset.currentlocale
+
+  let params = new URLSearchParams(document.location.search);
+  i18n.locale = params.get('lang')
 
   let link = document.querySelector('.form-inline-link[data-test-id="' + testId +'"]')
   let testTitle = document.querySelector('.test-title[data-test-id="' + testId +'"]')
