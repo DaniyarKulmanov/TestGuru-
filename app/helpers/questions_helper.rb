@@ -8,7 +8,7 @@ module QuestionsHelper
     if question.new_record?
       (t("new", name: title) + ' ' + suffix).capitalize
     else
-      (t("edit", name: title) + ' ' + suffix).capitalize
+      (t("edit") + ' ' + title + ' ' + suffix).capitalize
     end
   end
 end
