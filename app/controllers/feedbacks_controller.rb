@@ -6,15 +6,22 @@ class FeedbacksController < ApplicationController
   def new; end
 
   def create
-    @body = params[:feedback][:body]
-    # TODO use FeedbackForm, @feedback_form.save?
-    if @body.present?
+    @feedback = FeedbackForm.new(feedback_params)
+
+
+    if @feedback.save
       flash[:alert] = t('.success')
-      FeedbacksMailer.created_notification(current_user, @body).deliver_now
+      FeedbacksMailer.created_notification(current_user, @feedback.body).deliver_now
       redirect_to root_path
     else
       flash[:alert] = t('.failure')
       render :new
     end
+  end
+
+  private
+
+  def feedback_params
+    params.require(:feedback).permit(:body)
   end
 end
