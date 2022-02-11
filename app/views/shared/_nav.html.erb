@@ -2,6 +2,7 @@
   <%= link_to t('.test_guru'), root_path, class: 'navbar-brand' %>
 
   <span class="navbar-text">
+    <%= change_locale %>
     <% if current_user.is_a?(Admin) %>
       <%= link_to t('.admin_panel'), admin_tests_path %>
       <%= link_to t('.gists_list'), admin_gists_path %>

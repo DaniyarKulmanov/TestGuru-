@@ -1,12 +1,12 @@
-<h2><%= t('.header') %></h2>
+<h2><%= t('activerecord.models.gist.many') %></h2>
 
 <table class="table table-striped">
   <thead>
     <tr class="table-info">
-      <th><%= t('.question', title: nil)%></th>
-      <th><%= t('.url', level: nil)%></th>
-      <th><%= t('.email') %></th>
-      <th colspan="4"><%= t('.delete') %></th>
+      <th><%= t('activerecord.attributes.gist.question_url')%></th>
+      <th><%= t('activerecord.attributes.gist.gist_url')%></th>
+      <th><%= t('activerecord.attributes.gist.email') %></th>
+      <th><%= t('actions') %></th>
     </tr>
   </thead>
   <%= render @gists %>

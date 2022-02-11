@@ -2,15 +2,15 @@
 
 <h2><%= t('.level', level: @test.level )%></h2>
 
-<%= link_to t('.question'), new_admin_test_question_path(@test) %>
+<%= link_to t('new', name: t('activerecord.models.question.one').downcase), new_admin_test_question_path(@test) %>
 
-<h2><%= t('.questions') %></h2>
+<h2><%= t('activerecord.models.question.many') %></h2>
 
-<table>
+<table class="table table-bordered border-info">
   <thead>
     <tr>
-      <th><%= t('.body') %></th>
-      <th colspan="3"><%= t('.actions') %></th>
+      <th class="text-center"><%= t('activerecord.attributes.question.body') %></th>
+      <th colspan="3" class="text-center"><%= t('actions') %></th>
     </tr>
   </thead>
   <%= render partial: 'admin/questions/question', collection: @test.questions %>

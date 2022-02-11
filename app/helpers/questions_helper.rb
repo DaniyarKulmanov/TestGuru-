@@ -2,6 +2,13 @@
 
 module QuestionsHelper
   def question_header(question)
-    question.new_record? ? "Create New #{question.test.title} Question" : "Edit #{question.test.title} Question"
+    title = question.test.title
+    suffix = t('activerecord.models.question.one')
+
+    if question.new_record?
+      (t("new", name: title) + ' ' + suffix).capitalize
+    else
+      (t("edit") + ' ' + title + ' ' + suffix).capitalize
+    end
   end
 end

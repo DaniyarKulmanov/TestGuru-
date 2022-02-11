@@ -1,3 +1,5 @@
+import { I18n } from "i18n-js"
+
 document.addEventListener('turbolinks:load', function() {
   let inlineForms = document.querySelectorAll('.form-inline-link')
 
@@ -23,6 +25,20 @@ function formInlineLinkHandler(event) {
 }
 
 function formInlineHandler(testId){
+  const i18n = new I18n({
+    "en": {
+      cancel: "cancel",
+      edit: 'edit',
+    },
+    "ru": {
+      cancel: 'отмена',
+      edit: 'изменить',
+    }
+  });
+
+  let params = new URLSearchParams(document.location.search);
+  i18n.locale = params.get('lang')
+
   let link = document.querySelector('.form-inline-link[data-test-id="' + testId +'"]')
   let testTitle = document.querySelector('.test-title[data-test-id="' + testId +'"]')
   let formInline = document.querySelector('.form-inline[data-test-id="' + testId +'"]')
@@ -30,10 +46,10 @@ function formInlineHandler(testId){
   if (formInline.classList.contains('hide')){
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')
-    link.textContent = 'Cancel'
+    link.textContent = i18n.t('cancel')
   } else {
     testTitle.classList.remove('hide')
     formInline.classList.add('hide')
-    link.textContent = 'Edit'
+    link.textContent = i18n.t('edit')
   }
 }

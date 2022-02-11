@@ -24,5 +24,4 @@ class ResultsController < ApplicationController
   def set_result
     @result = Result.find(params[:id])
   end
-
 end

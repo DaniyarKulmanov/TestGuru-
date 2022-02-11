@@ -1,4 +1,4 @@
-<h2>Become a Ruby on Rails Guru</h2>
+<h2><%=t('.become_guru') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -21,7 +21,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= t('.min_password_length', length: @minimum_password_length )%>)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <%= octicon 'circle-slash', class: 'hide' %>
@@ -36,7 +36,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t(".sign_up") %>
   </div>
 <% end %>
 

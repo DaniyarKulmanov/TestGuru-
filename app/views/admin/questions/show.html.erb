@@ -1,14 +1,14 @@
-<h3>Question body: <%= @question.body %></h3>
+<h3><%= t('activerecord.attributes.question.body') %>: <%= @question.body %></h3>
 
-<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
+<%= link_to t('new', name: t('activerecord.models.answer.one').downcase), new_admin_question_answer_path(@question) %>
 
-<h2>Answers</h2>
+<h2><%= t('activerecord.models.answer.many').capitalize %></h2>
 
-<table>
+<table class="table table-bordered border-info">
   <thead>
   <tr>
-    <th>Body</th>
-    <th colspan="3">Actions</th>
+    <th class="text-center"><%= t('activerecord.attributes.answer.body') %></th>
+    <th colspan="3" class="text-center"><%= t('actions') %></th>
   </tr>
   </thead>
 
@@ -16,5 +16,5 @@
 
 </table>
 
-<p> <%= link_to 'edit', edit_admin_question_path(@question) %> </p>
-<p> <%= link_to 'back', admin_test_path(@question.test_id) %> </p>
+<p> <%= link_to t('edit'), edit_admin_question_path(@question) %></p>
+<p> <%= link_to t('back'), admin_test_path(@question.test_id) %> </p>

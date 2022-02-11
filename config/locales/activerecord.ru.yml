@@ -8,8 +8,15 @@ ru:
         other: "%{count} пользователя"
       admin: "Администратор"
       test: "Тест"
-      question: "Вопрос"
-      answer: "Ответ"
+      question:
+        one: "Вопрос"
+        many: "Вопросы"
+      answer:
+        one: "Ответ"
+        many: "Ответов"
+      gist:
+        one: "Гист"
+        many: "Гисты"
 
     attributes:
       test:
@@ -17,9 +24,11 @@ ru:
         level: "Уровень"
         category: 'Категория'
       user:
-        email: 'email'
+        email: 'Почта'
         first_name: "Имя"
         last_name: "Фамилия"
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
       result:
         correct_questions: "количество правильных ответов"
       question:
@@ -29,6 +38,10 @@ ru:
       answer:
         body: "Тело"
         correct: "правильный"
+      gist:
+        question_url: "Ссылка на вопрос"
+        gist_url: "Ссылка на гист"
+        email: "Автор гиста"
 
     errors:
       models:
@@ -49,8 +62,10 @@ ru:
             email:
               blank: "укажите электронную почту"
               invalid: "Не верный формат электронной почты"
+              taken: 'уже используется, укажите другую почту'
             password:
               blank: "Укажите пароль"
+              too_short: 'склишком короткий'
             password_confirmation:
               confirmation: "Подтвердите пароль"
             first_name:

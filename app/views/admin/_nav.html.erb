@@ -1,8 +1,9 @@
 <div class="navbar navbar-warning bg-warning">
-  <%= link_to t('.test_guru'), root_path, class: 'navbar-brand' %>
+  <%= link_to t('.test_guru'), root_path, class: 'navbar-brand', data: {current_locale: I18n.locale } %>
 
   <span class="navbar-text">
     <% if user_signed_in? %>
+      <%= change_locale %>
       <%= link_to t('.main'), admin_tests_path %>
       <%= link_to t('.gists_list'), admin_gists_path %>
       <%= t('.welcome')%>, <b><%= current_user.email %></b> <%= t('.guru')%> |

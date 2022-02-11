@@ -9,4 +9,12 @@ module ApplicationHelper
     title = repo.nil? ? "Автор #{author}" : "Проект #{repo}"
     link_to title, "https://github.com/#{author}/#{repo}", target: '_blank'
   end
+
+  def change_locale
+    if I18n.locale == :ru
+      link_to 'EN', url_for(lang: :en), class: 'lang'
+    else
+      link_to 'RU', url_for(lang: :ru), class: 'lang'
+    end
+  end
 end

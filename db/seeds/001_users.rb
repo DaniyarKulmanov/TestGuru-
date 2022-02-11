@@ -1,7 +1,19 @@
 # frozen_string_literal: true
 
-NAMES = %w[John Daniyar Vasya Madiyar].freeze
+PASSWORD = ENV.fetch('INITIAL_PASSWORD')
 
-NAMES.each do |name|
-  User.find_or_create_by(name: name, email: "#{name}@mailbox.kz")
+5.times do
+  User.create(email: Faker::Internet.email,
+              first_name: Faker::Name.first_name,
+              last_name: Faker::Name.last_name,
+              password: PASSWORD,
+              password_confirmation: PASSWORD,
+              confirmed_at: Time.now)
 end
+
+Admin.create(email: Faker::Internet.email,
+             first_name: Faker::Name.first_name,
+             last_name: Faker::Name.last_name,
+             password: PASSWORD,
+             password_confirmation: PASSWORD,
+             confirmed_at: Time.now)

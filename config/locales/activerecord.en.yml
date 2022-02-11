@@ -13,9 +13,13 @@ en:
       question:
         one: 'Question'
         other: 'Questions'
+        many: "Questions"
       answer:
         one: 'Answer'
-        other: 'Answers'
+        many: 'Answers'
+      gist:
+        one: 'Gist'
+        many: "Gists"
 
     attributes:
       test:
@@ -24,8 +28,10 @@ en:
         category: 'Category'
       user:
         email: 'email'
-        first_name: 'first_name'
-        last_name: 'last_name'
+        first_name: 'First name'
+        last_name: 'Last name'
+        password: 'password'
+        password_confirmation: 'password confirmation'
       result:
         correct_questions: 'correct questions'
       question:
@@ -35,6 +41,10 @@ en:
       answer:
         body: 'body'
         correct: 'correct'
+      gist:
+        question_url: "Question link"
+        gist_url: "Gist link"
+        email: "Gist author"
 
     errors:
       models:
@@ -55,8 +65,10 @@ en:
             email:
               blank: "can't be blank"
               invalid: 'Invalid email format'
+              taken: 'already taken'
             password:
               blank: "can't be blank"
+              too_short: 'is too short'
             password_confirmation:
               confirmation: "can't be blank"
             first_name:

@@ -5,17 +5,13 @@ en:
   delete: 'delete'
   confirm: "Delete %{name}?"
   back: "back"
+  actions: 'Actions'
+  new: "New %{name}"
   gist_question: 'A question about %{title} from TestGuru'
   gist_filename: 'test-guru-question.txt'
 
   test:
     start: "Go!"
-
-  helpers:
-    submit:
-      test:
-        create: 'Create test'
-        update: 'Update test'
 
     label:
       test:
@@ -87,10 +83,6 @@ en:
       show:
         title: "Test name %{title}"
         level: "Level %{level}"
-        question: "Add new question"
-        questions: "Questions:"
-        body: "Text"
-        actions: "Actions"
   shared:
     nav:
       test_guru: 'TestGuru'
@@ -105,7 +97,47 @@ en:
       header:
         one: "Total %{count} error detected"
         other: "Total %{count} errors detected"
+    footer:
+      current_year: "Year:"
+      feedback: "Leave feedback"
+      footer: "Information and links:"
   gists:
     create:
       success: 'Gist was successfully created'
       failure: 'An error occured while saving gist'
+  feedbacks:
+    create:
+      success: "Feedback sent"
+      failure: "Not sent, please enter feedback text message"
+    new:
+      send: "send"
+      header: "Feedback"
+      body: "text message here"
+  feedbacks_mailer:
+    created_notification:
+      title: "New Feedback!"
+      feedback: "New feedback from: %{user}"
+  users:
+    sessions:
+      new:
+        log_in: "Log in"
+        email: "email"
+        password: "password"
+        remember_me: "remember me"
+        enter: "Enter"
+        enter_email: "Enter email"
+        enter_password: "Enter password"
+    registrations:
+      new:
+        become_guru: "Become a Ruby on Rails Guru"
+        sign_up: "Sign up"
+        min_password_length: "%{length} characters minimum"
+    passwords:
+      new:
+        reset_instructions: "Send me reset password instructions"
+  forgot: "Forgot password?"
+  change: "Edit %{name}"
+  helpers:
+    submit:
+      create: "Create a %{model}"
+      update: "Update a %{model}"

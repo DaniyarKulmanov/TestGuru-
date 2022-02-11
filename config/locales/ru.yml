@@ -5,17 +5,13 @@ ru:
   delete: 'удалить'
   confirm: "удалить %{name}?"
   back: 'назад'
+  actions: 'Действия'
+  new: "Новый %{name}"
   gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
   gist_filename: 'test-guru-вопрос.txt'
 
   test:
     start: "Начать!"
-
-  helpers:
-    submit:
-      test:
-        create: 'Создать тест'
-        update: 'Обновить тест'
 
     label:
       test:
@@ -73,7 +69,7 @@ ru:
         delete: 'Удалить'
     tests:
       form_inline:
-        submit: 'ok'
+        submit: 'ок'
       form:
         prompt: 'Выбрать категорию'
       index:
@@ -88,10 +84,6 @@ ru:
       show:
         title: "Название теста %{title}"
         level: "Уровень %{level}"
-        question: "Добавить новый вопрос"
-        questions: "Вопросы:"
-        body: "Текст"
-        actions: "Действия"
 
   shared:
     nav:
@@ -109,7 +101,47 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    footer:
+      current_year: "Год:"
+      feedback: "Оставить отзыв"
+      footer: "Ссылки и информация:"
   gists:
     create:
       success: 'Гист создан успешно'
       failure: 'Гист не создан'
+  feedbacks:
+    create:
+      success: "Отзыв отправлен"
+      failure: "Не отправлено, пожалуйста заполните текст сообщения"
+    new:
+      send: "Отправить"
+      header: "Отзыв"
+      body: "Текст сообщения"
+  feedbacks_mailer:
+    created_notification:
+      title: "Новый отзыв!"
+      feedback: "Новый отзыв от пользователя: %{user}"
+  users:
+    sessions:
+      new:
+        log_in: "Войти"
+        email: "почта"
+        password: "пароль"
+        remember_me: "запомнить меня"
+        enter: "Войти"
+        enter_email: "Введите почту"
+        enter_password: "Введите пароль"
+    registrations:
+      new:
+        become_guru: "Стань гуру Ruby on Rails"
+        sign_up: "Зарегистрироваться"
+        min_password_length: "Не менее %{length} символов"
+    passwords:
+      new:
+        reset_instructions: "Отправить мне инструкции по сбросу пароля"
+  forgot: "Забыли пароль?"
+  change: "Изменить %{name}"
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"

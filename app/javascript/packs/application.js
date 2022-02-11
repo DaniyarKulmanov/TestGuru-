@@ -5,6 +5,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require i18n
+//= require i18n/translations
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
