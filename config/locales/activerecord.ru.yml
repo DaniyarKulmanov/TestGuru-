@@ -17,6 +17,9 @@ ru:
       gist:
         one: "Гист"
         many: "Гисты"
+      badge:
+        one: 'Бэйдж'
+        many: 'Бэйджи'
 
     attributes:
       test:

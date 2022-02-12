@@ -20,6 +20,9 @@ en:
       gist:
         one: 'Gist'
         many: "Gists"
+      badge:
+        one: 'Badge'
+        many: 'Badges'
 
     attributes:
       test:
