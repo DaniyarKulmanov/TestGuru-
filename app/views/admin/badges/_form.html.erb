@@ -1,0 +1,24 @@
+<%= form_with model: [:admin, @badge] do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+  </p>
+
+  <p> Choose badge icon:
+    <%= form.collection_radio_buttons(:filename, [[1, 'completed'] ,[2, 'first_try'], [3, 'backend']], :first, :last) do |b| %>
+      <%= b.label { b.radio_button + image_tag(b.text+'.png') } %>
+    <% end %>
+  </p>
+
+  <p> Choose badge criteria:
+    <%= form.collection_radio_buttons(:criteria, [[1, 'completed'] ,[2, 'first_try'], [3, 'backend']], :first, :last) do |b| %>
+      <%= b.label { b.radio_button + b.text } %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
