@@ -9,6 +9,7 @@ en:
   new: "New %{name}"
   gist_question: 'A question about %{title} from TestGuru'
   gist_filename: 'test-guru-question.txt'
+  become_guru: "Become a Ruby on Rails Guru"
 
   test:
     start: "Go!"

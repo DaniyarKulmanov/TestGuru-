@@ -9,6 +9,7 @@ ru:
   new: "Новый %{name}"
   gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
   gist_filename: 'test-guru-вопрос.txt'
+  become_guru: "Стань гуру Ruby on Rails"
 
   test:
     start: "Начать!"
