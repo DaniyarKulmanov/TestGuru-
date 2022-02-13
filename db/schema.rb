@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_13_160710) do
+ActiveRecord::Schema.define(version: 2022_02_13_171115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2022_02_13_160710) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "name"
-    t.string "filename"
+    t.string "name", null: false
+    t.string "filename", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "author_id"
-    t.string "criteria"
+    t.string "criteria", null: false
     t.index ["author_id"], name: "index_badges_on_author_id"
   end
 
