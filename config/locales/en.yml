@@ -75,8 +75,6 @@ en:
       index:
         header: 'Available tests'
         questions_count: "Total questions"
-      new:
-        header: 'New test'
       edit:
         header: 'Edit test'
       create:

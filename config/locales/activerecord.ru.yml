@@ -7,7 +7,9 @@ ru:
         many: "%{count} пользователей"
         other: "%{count} пользователя"
       admin: "Администратор"
-      test: "Тест"
+      test:
+        one: "Тест"
+        many: "Тесты"
       question:
         one: "Вопрос"
         many: "Вопросы"

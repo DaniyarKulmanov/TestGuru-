@@ -6,13 +6,13 @@
     <%= form.text_field :name %><br>
   </p>
 
-  <p> Choose badge icon:
-    <%= form.collection_radio_buttons(:filename, [[1, 'completed'] ,[2, 'first_try'], [3, 'backend']], :first, :last) do |b| %>
+  <p>
+    <%= form.collection_radio_buttons(:filename, [%w[completed.png completed], %w[first_try.png first_try], %w[backend.png backend]], :first, :last) do |b| %>
       <%= b.label { b.radio_button + image_tag(b.text+'.png') } %>
     <% end %>
   </p>
 
-  <p> Choose badge criteria:
+  <p>
     <%= form.collection_radio_buttons(:criteria, [[1, 'completed'] ,[2, 'first_try'], [3, 'backend']], :first, :last) do |b| %>
       <%= b.label { b.radio_button + b.text } %>
     <% end %>

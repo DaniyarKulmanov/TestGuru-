@@ -1,6 +1,6 @@
 <h2><%= t('.header') %></h2>
 
-<p><%= link_to t('admin.tests.new.header'), new_admin_test_path(@test) %></p>
+<p><%= link_to t('new', name: t('activerecord.models.test.one')), new_admin_test_path(@test) %></p>
 
 <%= render 'shared/errors', resource: @test %>
 

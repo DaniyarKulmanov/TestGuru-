@@ -76,8 +76,6 @@ ru:
       index:
         header: 'Доступные тесты'
         questions_count: "Всего вопросов"
-      new:
-        header: 'Новый тест'
       edit:
         header: 'Изменить тест'
       create:
