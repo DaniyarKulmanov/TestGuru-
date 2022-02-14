@@ -48,6 +48,10 @@ en:
         question_url: "Question link"
         gist_url: "Gist link"
         email: "Gist author"
+      badge:
+        name: 'Name'
+        filename: 'Icon'
+        criteria: 'Criteria'
 
     errors:
       models:

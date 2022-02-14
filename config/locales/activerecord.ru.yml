@@ -47,6 +47,10 @@ ru:
         question_url: "Ссылка на вопрос"
         gist_url: "Ссылка на гист"
         email: "Автор гиста"
+      badge:
+        name: 'Название'
+        filename: 'Иконка'
+        criteria: 'Критерий'
 
     errors:
       models:
