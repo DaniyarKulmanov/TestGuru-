@@ -140,3 +140,9 @@ en:
     submit:
       create: "Create a %{model}"
       update: "Update a %{model}"
+
+  badges:
+    CRITERIA:
+      completed: 'completed'
+      first_try: 'first try'
+      backend: 'backend'

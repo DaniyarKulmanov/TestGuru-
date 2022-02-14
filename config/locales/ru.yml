@@ -144,3 +144,9 @@ ru:
     submit:
       create: "Создать %{model}"
       update: "Обновить %{model}"
+
+  badges:
+    CRITERIA:
+      completed: 'завершить все тесты'
+      first_try: 'с первой попытки'
+      backend: 'все тесты темы Backend'

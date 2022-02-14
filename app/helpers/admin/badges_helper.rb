@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin::BadgesHelper
-  def images
+  def all_images
     images = []
     images_all = Dir.entries("app/assets/images").select { |f| f =~ /.*(png)/}
     (images_all).each_slice(1) {|tuple| images.push(tuple) }

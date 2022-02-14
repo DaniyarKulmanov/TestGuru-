@@ -8,16 +8,14 @@
 
   <p>
     <%= form.label :filename %>
-    <%= form.collection_radio_buttons(:filename, images, :first, :last) do |b| %>
+    <%= form.collection_radio_buttons(:filename, all_images, :first, :last) do |b| %>
       <%= b.label { b.radio_button + image_tag(b.text) } %>
     <% end %>
   </p>
 
   <p>
     <%= form.label :criteria %>
-    <%= form.collection_radio_buttons(:criteria, Badge::CRITERIA, :first, :last) do |b| %>
-      <%= b.label { b.radio_button + b.text } %>
-    <% end %>
+    <%= form.select :criteria, t(Badge::CRITERIA, scope: 'badges.CRITERIA')%>
   </p>
 
   <p>
