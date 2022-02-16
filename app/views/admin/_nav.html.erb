@@ -4,8 +4,9 @@
   <span class="navbar-text">
     <% if user_signed_in? %>
       <%= change_locale %>
-      <%= link_to t('.main'), admin_tests_path %>
-      <%= link_to t('.gists_list'), admin_gists_path %>
+      <%= link_to t('activerecord.models.test.many'), admin_tests_path %>
+      <%= link_to t('activerecord.models.gist.many'), admin_gists_path %>
+      <%= link_to t('activerecord.models.badge.many'), admin_badges_path %>
       <%= t('.welcome')%>, <b><%= current_user.email %></b> <%= t('.guru')%> |
       <%= link_to t('.log_out'), destroy_user_session_path, method: :delete %>
     <% else %>
