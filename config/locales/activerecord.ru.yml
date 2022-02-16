@@ -63,6 +63,7 @@ ru:
             criteria:
               blank: 'не выбран'
               inclusion: 'выберите из выпдающего списка'
+              taken: 'уже выбран в другом бейдже'
         question:
           attributes:
             body:

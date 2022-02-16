@@ -6,5 +6,5 @@ class Badge < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   validates :name, :filename, presence: true
-  validates :criteria, presence: true, inclusion: { in: CRITERIA }
+  validates :criteria, presence: true, inclusion: { in: CRITERIA }, uniqueness: true
 end

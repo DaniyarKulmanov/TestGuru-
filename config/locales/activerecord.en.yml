@@ -65,6 +65,7 @@ en:
             criteria:
               blank: 'not chosen'
               inclusion: 'choose from dropdown list'
+              taken: 'already taken'
         question:
           attributes:
             body:
