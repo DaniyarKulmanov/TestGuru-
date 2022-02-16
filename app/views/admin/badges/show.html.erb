@@ -1,2 +1,7 @@
-<h1>Admin::Badges#show</h1>
-<p>Find me in app/views/admin/badges/show.html.erb</p>
+<h1><%= t('activerecord.models.badge.one') %></h1>
+
+<p><%= t('activerecord.attributes.badge.name') %> <%= @badge.name %> </p>
+<p><%= t('activerecord.attributes.badge.filename') %> <%= image_tag(@badge.filename) %> </p>
+<p><%= t('activerecord.attributes.badge.criteria') %> <%= t(@badge.criteria, scope: 'badges.CRITERIA') %> </p>
+
+<p> <%= link_to t('back'), admin_badges_path %> </p>

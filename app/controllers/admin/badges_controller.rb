@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class Admin::BadgesController < Admin::BaseController
   before_action :authenticate_user!
   before_action :set_badge, only: %i[show edit update destroy]
 
   def index
+    @badges = Badge.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @badge = Badge.new
@@ -23,13 +25,20 @@ class Admin::BadgesController < Admin::BaseController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
+    if @badge.update(badge_params)
+      redirect_to admin_badge_path(@badge)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @badge.destroy
+
+    redirect_to admin_badges_path
   end
 
   private

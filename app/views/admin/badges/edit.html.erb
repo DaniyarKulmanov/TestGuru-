@@ -1,2 +1,5 @@
-<h1>Admin::Badges#edit</h1>
-<p>Find me in app/views/admin/badges/edit.html.erb</p>
+<h1><%= t( 'change', name: t('activerecord.models.badge.one').downcase) %></h1>
+
+<%= render 'form' %>
+
+<p> <%= link_to t('back'), admin_badges_path %> </p>
