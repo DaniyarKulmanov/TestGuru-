@@ -150,3 +150,5 @@ ru:
       completed: 'завершить все тесты'
       first_try: 'с первой попытки'
       backend: 'все тесты темы Backend'
+  success: "%{name} создан"
+  prompt: "Выберите %{name}"

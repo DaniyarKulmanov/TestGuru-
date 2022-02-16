@@ -146,3 +146,5 @@ en:
       completed: 'completed'
       first_try: 'first try'
       backend: 'backend'
+  success: "%{name} created"
+  prompt: "Choose %{name}"
