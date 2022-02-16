@@ -54,6 +54,15 @@ ru:
 
     errors:
       models:
+        badge:
+          attributes:
+            name:
+              blank: 'не может быть пустым'
+            filename:
+              blank: 'не выбрана'
+            criteria:
+              blank: 'не выбран'
+              inclusion: 'выберите из выпдающего списка'
         question:
           attributes:
             body:

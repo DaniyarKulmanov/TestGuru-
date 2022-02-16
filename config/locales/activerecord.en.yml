@@ -56,6 +56,15 @@ en:
 
     errors:
       models:
+        badge:
+          attributes:
+            name:
+              blank: "can't be blank"
+            filename:
+              blank: 'please choose'
+            criteria:
+              blank: 'not chosen'
+              inclusion: 'choose from dropdown list'
         question:
           attributes:
             body:
