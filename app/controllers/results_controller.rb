@@ -7,12 +7,14 @@ class ResultsController < ApplicationController
   def show; end
 
   def attempt; end
-
+  # TODO add badges in show
   def update
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
       TestsMailer.completed_test(@result).deliver_now
+
+      @result.distribute_badges
       redirect_to attempt_result_path(@result)
     else
       render :show

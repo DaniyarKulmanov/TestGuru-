@@ -28,6 +28,11 @@ class Result < ApplicationRecord
     ((correct_questions.to_f / test.questions.count) * 100).round
   end
 
+
+  def distribute_badges
+    give_badges if passed?
+  end
+
   private
 
   def before_validation_set_first_question
@@ -44,5 +49,19 @@ class Result < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def give_badges
+    won_badge('first_try') if first_try?
+    # completed
+    # backend
+  end
+
+  def won_badge(criteria)
+    user.badges.push(Badge.where(criteria: criteria))
+  end
+
+  def first_try?
+    user.results.count{ |r| r.test == test } == 1
   end
 end
