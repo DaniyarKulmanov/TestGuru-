@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Badge < ApplicationRecord
-  CRITERIA = %w( completed first_try backend).freeze
+  CRITERIA = %w( completed_all first_try backend).freeze
 
   belongs_to :author, class_name: 'User'
 

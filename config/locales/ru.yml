@@ -147,7 +147,7 @@ ru:
 
   badges:
     CRITERIA:
-      completed: 'завершить все тесты'
+      completed_all: 'завершить все тесты'
       first_try: 'с первой попытки'
       backend: 'все тесты темы Backend'
   success: "%{name} создан"

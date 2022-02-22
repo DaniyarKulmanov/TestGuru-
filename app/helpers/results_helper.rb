@@ -3,7 +3,8 @@
 module ResultsHelper
   def attempt_information
     score = @result.score
-    if @result.passed?
+
+    if @result.passed
       status = 'positive'
       result = t('results.passed', score: score)
     else

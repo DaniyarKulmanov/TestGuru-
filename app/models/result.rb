@@ -13,6 +13,7 @@ class Result < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = next_question
+    self.passed = passed? if completed?
     save!
   end
 
@@ -53,15 +54,19 @@ class Result < ApplicationRecord
 
   def give_badges
     won_badge('first_try') if first_try?
-    # completed
+    won_badge('completed_all') if completed_all_tests?
     # backend
   end
 
   def won_badge(criteria)
     user.badges.push(Badge.where(criteria: criteria))
   end
-
+  # TODO no all first tries count
   def first_try?
-    user.results.count{ |r| r.test == test } == 1
+    Result.where(test: test, user: user, passed: true).count == 1
+  end
+  # TODO add only once logic
+  def completed_all_tests?
+    (Test.all - user.passed_tests.all).empty?
   end
 end
