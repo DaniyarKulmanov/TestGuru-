@@ -55,7 +55,7 @@ class Result < ApplicationRecord
   def give_badges
     won_badge('first_try') if first_try?
     won_badge('completed_all') if completed_all_tests?
-    # backend
+    won_badge('backend') if completed_backend?
   end
 
   def won_badge(criteria)
@@ -70,7 +70,16 @@ class Result < ApplicationRecord
     if user.badges.exists?(criteria: 'completed_all')
       false
     else
-      (Test.all - user.passed_tests.all).empty?
+      (Test.all.ids - user.passed_tests.ids).empty?
     end
   end
+
+  def completed_backend?
+    if user.badges.exists?(criteria: 'backend')
+      false
+    else
+      (Test.all.by_category('Back_end') - user.passed_tests.by_category('Back_end')).empty?
+    end
+  end
+
 end
