@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Result < ApplicationRecord
-  SUCCESS_RATIO = 85
+  SUCCESS_RATIO = 10 # TODO for test purpose only
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -61,12 +61,16 @@ class Result < ApplicationRecord
   def won_badge(criteria)
     user.badges.push(Badge.where(criteria: criteria))
   end
-  # TODO no all first tries count
+
   def first_try?
     Result.where(test: test, user: user, passed: true).count == 1
   end
-  # TODO add only once logic
+
   def completed_all_tests?
-    (Test.all - user.passed_tests.all).empty?
+    if user.badges.exists?(criteria: 'completed_all')
+      false
+    else
+      (Test.all - user.passed_tests.all).empty?
+    end
   end
 end
