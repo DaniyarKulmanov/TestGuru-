@@ -7,7 +7,7 @@ class ResultsController < ApplicationController
   def show; end
 
   def attempt; end
-  # TODO add badges in show
+
   def update
     @result.accept!(params[:answer_ids])
 
