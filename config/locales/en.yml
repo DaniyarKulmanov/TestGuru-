@@ -91,7 +91,6 @@ en:
       sign_up: 'Sing up'
       welcome: 'Welcome'
       admin_panel: 'Admin panel'
-      gists_list: 'Gists list'
     errors:
       header:
         one: "Total %{count} error detected"
@@ -146,5 +145,7 @@ en:
       completed_all: 'completed all tests'
       first_try: 'first try'
       backend: 'backend'
+    index:
+      earned_badges: "Earned badges"
   success: "%{name} created"
   prompt: "Choose %{name}"

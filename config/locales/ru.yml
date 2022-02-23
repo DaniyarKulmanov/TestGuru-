@@ -93,7 +93,6 @@ ru:
       log_in: 'Войти'
       sign_up: 'Регистрация'
       admin_panel: 'Админ'
-      gists_list: 'Gists'
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -150,5 +149,7 @@ ru:
       completed_all: 'завершить все тесты'
       first_try: 'с первой попытки'
       backend: 'все тесты темы Backend'
+    index:
+      earned_badges: "Заработанные бейджи"
   success: "%{name} создан"
   prompt: "Выберите %{name}"

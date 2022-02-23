@@ -1,0 +1,25 @@
+<h2><%= t('activerecord.models.badge.many') %></h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr class="table-info">
+    <th class="text-center"><%= t('activerecord.attributes.badge.name')%></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.filename')%></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.criteria') %></th>
+  </tr>
+  </thead>
+  <%= render @badges %>
+</table>
+
+<h2><%= t('.earned_badges') %></h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr class="table-info">
+    <th class="text-center"><%= t('activerecord.attributes.badge.name')%></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.filename')%></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.criteria') %></th>
+  </tr>
+  </thead>
+  <%= render partial: 'badge', collection: current_user.badges %>
+</table>
