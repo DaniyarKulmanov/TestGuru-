@@ -11,12 +11,11 @@ class Admin::BadgesController < Admin::BaseController
   def show; end
 
   def new
-    @badge = Badge.new
+    @badge = current_user.created_badges.new
   end
 
   def create
-    @badge = Badge.new(badge_params)
-    set_author
+    @badge = current_user.created_badges.build(badge_params)
 
     if @badge.save
       redirect_to admin_badge_path(@badge), notice: t('success', name: @badge.name)
@@ -45,10 +44,6 @@ class Admin::BadgesController < Admin::BaseController
 
   def set_badge
     @badge = Badge.find(params[:id])
-  end
-
-  def set_author
-    @badge.author = current_user
   end
 
   def badge_params
