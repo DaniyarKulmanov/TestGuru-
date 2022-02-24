@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Badge < ApplicationRecord
-  CRITERIA = %w( completed_all first_try backend).freeze
+  enum criteria: { category: 0, attempts: 1, named: 2, level: 3 }, _prefix: true
 
   belongs_to :author, class_name: 'User'
 
@@ -9,5 +9,4 @@ class Badge < ApplicationRecord
   has_many :users, through: :earnings
 
   validates :name, :filename, presence: true
-  validates :criteria, presence: true, inclusion: { in: CRITERIA }, uniqueness: true
 end
