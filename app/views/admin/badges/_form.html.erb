@@ -16,7 +16,7 @@
   <p>
     <%= form.label :criteria %>
     <%= form.select :criteria,
-                    Badge::CRITERIA.collect { |criteria| [ t(criteria, scope: 'badges.CRITERIA'), criteria ] },
+                    Badge.criteria.keys.collect{ |criteria| [Badge.human_enum_name(:criteria, criteria), criteria] },
                     prompt: t('prompt', name: t('activerecord.attributes.badge.criteria')) %>
   </p>
 

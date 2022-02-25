@@ -50,7 +50,13 @@ ru:
       badge:
         name: 'Название'
         filename: 'Иконка'
-        criteria: 'Критерий'
+        criteria:
+          one: 'Критерий'
+          many: 'Критерии'
+          category: 'Категория'
+          attempts: 'Попыток'
+          named: 'Именной'
+          level: 'Уровень'
 
     errors:
       models:

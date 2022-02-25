@@ -52,7 +52,13 @@ en:
       badge:
         name: 'Name'
         filename: 'Icon'
-        criteria: 'Criteria'
+        criteria:
+          one: 'Criteria'
+          many: 'Criteria'
+          category: 'Category'
+          attempts: 'Attempts'
+          named: 'Named'
+          level: 'Level'
 
     errors:
       models:
