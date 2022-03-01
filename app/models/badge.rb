@@ -3,8 +3,6 @@
 class Badge < ApplicationRecord
   enum criteria: { category: 0, attempts: 1, named: 2, level: 3 }, _prefix: true
 
-  belongs_to :author, class_name: 'User'
-
   has_many :earnings, dependent: :destroy
   has_many :users, through: :earnings
 
