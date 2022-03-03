@@ -11,11 +11,11 @@ class Admin::BadgesController < Admin::BaseController
   def show; end
 
   def new
-    @badge = current_user.created_badges.new
+    @badge = Badge.new
   end
 
   def create
-    @badge = current_user.created_badges.build(badge_params)
+    @badge = Badge.new(badge_params)
 
     if @badge.save
       redirect_to admin_badge_path(@badge), notice: t('success', name: @badge.name)

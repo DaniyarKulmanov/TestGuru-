@@ -6,6 +6,7 @@
     <th class="text-center"><%= t('activerecord.attributes.badge.name')%></th>
     <th class="text-center"><%= t('activerecord.attributes.badge.filename')%></th>
     <th class="text-center"><%= t('activerecord.attributes.badge.criteria.one') %></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.parameter') %></th>
   </tr>
   </thead>
   <%= render @badges %>
@@ -19,6 +20,7 @@
     <th class="text-center"><%= t('activerecord.attributes.badge.name')%></th>
     <th class="text-center"><%= t('activerecord.attributes.badge.filename')%></th>
     <th class="text-center"><%= t('activerecord.attributes.badge.criteria.one') %></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.parameter') %></th>
   </tr>
   </thead>
   <%= render partial: 'badge', collection: current_user.badges %>
