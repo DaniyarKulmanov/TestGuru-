@@ -50,6 +50,7 @@ ru:
       badge:
         name: 'Название'
         filename: 'Иконка'
+        parameter: 'Параметр критерия'
         criteria:
           one: 'Критерий'
           many: 'Критерии'
@@ -59,6 +60,8 @@ ru:
           level: 'Уровень'
 
     errors:
+      messages:
+        record_invalid: 'Не верная запись'
       models:
         badge:
           attributes:
@@ -70,6 +73,8 @@ ru:
               blank: 'не выбран'
               inclusion: 'выберите из выпдающего списка'
               taken: 'уже выбран в другом бейдже'
+            parameter:
+              inclusion: 'не верный'
         question:
           attributes:
             body:

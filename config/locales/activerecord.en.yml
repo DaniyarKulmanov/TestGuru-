@@ -52,6 +52,7 @@ en:
       badge:
         name: 'Name'
         filename: 'Icon'
+        parameter: 'Criteria parameter'
         criteria:
           one: 'Criteria'
           many: 'Criteria'
@@ -61,6 +62,8 @@ en:
           level: 'Level'
 
     errors:
+      messages:
+        record_invalid: 'wrong record'
       models:
         badge:
           attributes:
@@ -72,6 +75,8 @@ en:
               blank: 'not chosen'
               inclusion: 'choose from dropdown list'
               taken: 'already taken'
+            parameter:
+              inclusion: 'wrong'
         question:
           attributes:
             body:
