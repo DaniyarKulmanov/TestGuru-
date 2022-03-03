@@ -13,16 +13,12 @@ class Result < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = next_question
-    self.passed = passed? if completed?
+    self.passed = true if score >= SUCCESS_RATIO && completed?
     save!
   end
 
   def completed?
     current_question.nil?
-  end
-
-  def passed?
-    score >= SUCCESS_RATIO
   end
 
   def score
@@ -31,7 +27,7 @@ class Result < ApplicationRecord
 
 
   def distribute_badges
-    give_badges if passed?
+    give_badges if passed
   end
 
   private
@@ -52,6 +48,7 @@ class Result < ApplicationRecord
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
 
+  # TODO after ENUM methods not work refactor
   def give_badges
     won_badge('first_try') if first_try?
     won_badge('completed_all') if completed_all_tests?

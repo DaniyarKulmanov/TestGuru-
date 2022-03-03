@@ -15,6 +15,8 @@ class ResultsController < ApplicationController
       TestsMailer.completed_test(@result).deliver_now
 
       @result.distribute_badges
+      # TODO create service for badges
+      # Badge::BadgeDistribute.new(@result).call
       redirect_to attempt_result_path(@result)
     else
       render :show
