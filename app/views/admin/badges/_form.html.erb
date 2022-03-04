@@ -17,13 +17,18 @@
     <%= form.label :criteria %>
     <%= form.select :criteria,
                     Badge.criteria.keys.collect{ |criteria| [Badge.human_enum_name(:criteria, criteria), criteria] },
-                    prompt: t('prompt', name: t('activerecord.attributes.badge.criteria')) %>
+                    prompt: t('prompt', name: t('activerecord.attributes.badge.criteria.one')) %>
   </p>
 
   <p>
     <%= form.label :parameter %><br>
-    <%= form.text_field :parameter %><br>
+    <%= form.select :parameter, Category.pluck(:title) %><br>
   </p>
+
+  <%= hidden_field_tag 'category_titles', Category.pluck(:title) %>
+  <%= hidden_field_tag 'attempt_values', ("1".."10").to_a %>
+  <%= hidden_field_tag 'test_titles', Test.pluck(:title) %>
+  <%= hidden_field_tag 'test_levels', Test.all.map{|test| test.level.to_s} %>
 
   <p>
     <%= form.submit %>
