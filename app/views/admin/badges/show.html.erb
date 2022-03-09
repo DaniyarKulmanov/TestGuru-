@@ -2,6 +2,7 @@
 
 <p><%= t('activerecord.attributes.badge.name') %> <%= @badge.name %> </p>
 <p><%= t('activerecord.attributes.badge.filename') %> <%= image_tag(@badge.filename) %> </p>
-<p><%= t('activerecord.attributes.badge.criteria') %> <%= t(@badge.criteria, scope: 'badges.CRITERIA') %> </p>
+<p><%= t('activerecord.attributes.badge.criteria.one') %> <%= t(@badge.criteria, scope: Badge.human_enum_name(:criteria, @badge.criteria)) %> </p>
+<p><%= t('activerecord.attributes.badge.parameter') %> <%= t(@badge.parameter ) %> </p>
 
 <p> <%= link_to t('back'), admin_badges_path %> </p>
