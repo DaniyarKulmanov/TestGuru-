@@ -15,17 +15,24 @@ class Test < ApplicationRecord
   scope :beginner, -> { where(level: 0..1) }
   scope :advanced, -> { where(level: 2..4) }
   scope :pro, -> { where(level: 5..Float::INFINITY) }
+  scope :titles, -> { pluck(:title) }
 
-  def self.by_category(category)
-    joins(:category)
-      .where(category: { title: category })
-      .order(title: :desc)
-      .pluck(:title)
-  end
+  class << self
+    def by_category(category)
+      joins(:category)
+        .where(category: { title: category })
+        .order(title: :desc)
+        .pluck(:title)
+    end
 
-  def self.only_filled
-    includes(:questions)
-      .where.not(questions: { id: nil })
-      .sort
+    def only_filled
+      includes(:questions)
+        .where.not(questions: { id: nil })
+        .sort
+    end
+
+    def levels
+      Test.all.map { |test| test.level.to_s }
+    end
   end
 end

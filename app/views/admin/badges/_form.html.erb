@@ -22,13 +22,13 @@
 
   <p>
     <%= form.label :parameter %><br>
-    <%= form.select :parameter, Category.pluck(:title) %><br>
+    <%= form.select :parameter, Category.titles %><br>
   </p>
 
-  <%= hidden_field_tag 'category_titles', Category.pluck(:title) %>
-  <%= hidden_field_tag 'attempt_values', ("1".."10").to_a %>
-  <%= hidden_field_tag 'test_titles', Test.pluck(:title) %>
-  <%= hidden_field_tag 'test_levels', Test.all.map{|test| test.level.to_s} %>
+  <%= hidden_field_tag 'category_titles', Category.titles %>
+  <%= hidden_field_tag 'attempt_values', Badge::ATTEMPTS.to_a %>
+  <%= hidden_field_tag 'test_titles', Test.titles %>
+  <%= hidden_field_tag 'test_levels', Test.levels %>
 
   <p>
     <%= form.submit %>

@@ -25,7 +25,6 @@ class Result < ApplicationRecord
     ((correct_questions.to_f / test.questions.count) * 100).round
   end
 
-
   def distribute_badges
     give_badges if passed
   end
@@ -48,7 +47,7 @@ class Result < ApplicationRecord
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
 
-  # TODO after ENUM methods not work refactor
+  # TODO: after ENUM methods not work refactor
   def give_badges
     won_badge('first_try') if first_try?
     won_badge('completed_all') if completed_all_tests?
@@ -78,5 +77,4 @@ class Result < ApplicationRecord
       (Test.all.by_category('Back_end') - user.passed_tests.by_category('Back_end')).empty?
     end
   end
-
 end

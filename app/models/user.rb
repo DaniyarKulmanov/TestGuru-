@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   has_many :results, dependent: :destroy
   has_many :passed_results, -> { where passed: true }, class_name: 'Result'
-  has_many :passed_tests, :through => :passed_results, class_name: 'Test', :source => :test
+  has_many :passed_tests, through: :passed_results, class_name: 'Test', source: :test
   has_many :tests, through: :results
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
   has_many :gists, dependent: :destroy
