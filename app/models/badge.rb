@@ -13,5 +13,5 @@ class Badge < ApplicationRecord
   validates :parameter, inclusion: { in: ATTEMPTS }, if: :criteria_attempts?
   validates :parameter, inclusion: { in: Test.titles }, if: :criteria_named?
   validates :parameter, inclusion: { in: Test.levels }, if: :criteria_level?
-
+  validates :criteria, uniqueness: { scope: :parameter }
 end
