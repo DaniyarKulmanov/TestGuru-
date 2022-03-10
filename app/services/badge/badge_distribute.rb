@@ -26,7 +26,8 @@ class Badge::BadgeDistribute
   end
 
   def named(parameter)
-    user.results.last.test.title == parameter
+    result = user.results.last
+    result.test.title == parameter && result.passed
   end
 
   def level(parameter)
