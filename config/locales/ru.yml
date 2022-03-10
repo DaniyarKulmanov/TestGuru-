@@ -153,3 +153,7 @@ ru:
       earned_badges: "Заработанные бейджи"
   success: "%{name} создан"
   prompt: "Выберите %{name}"
+  services:
+    badge:
+      errors:
+        criteria: "Не найдено правило для критерия"

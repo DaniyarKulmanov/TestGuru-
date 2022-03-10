@@ -149,3 +149,7 @@ en:
       earned_badges: "Earned badges"
   success: "%{name} created"
   prompt: "Choose %{name}"
+  services:
+    badge:
+      errors:
+        criteria: 'No rule for this criteria'
