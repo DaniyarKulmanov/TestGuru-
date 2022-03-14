@@ -15,7 +15,7 @@ class Test < ApplicationRecord
   scope :beginner, -> { where(level: 0..1) }
   scope :advanced, -> { where(level: 2..4) }
   scope :pro, -> { where(level: 5..Float::INFINITY) }
-  scope :titles, -> { pluck(:title) }
+  scope :all_titles, -> { select(:title) }
 
   class << self
     def by_category(category)
@@ -33,6 +33,10 @@ class Test < ApplicationRecord
 
     def levels
       Test.all.map { |test| test.level.to_s }
+    end
+
+    def titles
+      all_titles.pluck(:title)
     end
   end
 end
