@@ -50,3 +50,7 @@ yarn-debug.log*
 
 # Ignore images
 /app/assets/images
+
+# OS generated files #
+.DS_Store
+.DS_Store?
