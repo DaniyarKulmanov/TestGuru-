@@ -22,12 +22,12 @@
 
   <p>
     <%= form.label :parameter %><br>
-    <%= form.select :parameter, categories %><br>
+    <%= form.select :parameter, categories_titles %><br>
   </p>
 
-  <%= hidden_field_tag 'category_titles', (categories).to_json.html_safe %>
+  <%= hidden_field_tag 'category_titles', categories_titles.to_json.html_safe %>
   <%= hidden_field_tag 'attempt_values', Badge::ATTEMPTS.to_a %>
-  <%= hidden_field_tag 'test_titles', Test.titles %>
+  <%= hidden_field_tag 'test_titles', tests_titles.to_json.html_safe %>
   <%= hidden_field_tag 'test_levels', Test.levels.uniq %>
 
   <p>

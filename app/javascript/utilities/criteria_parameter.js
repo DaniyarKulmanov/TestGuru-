@@ -10,7 +10,7 @@ function fillCriteriaParameters(){
 
     let categoryTitles = JSON.parse(document.getElementById('category_titles').value.split(' '))
     let attemptValues = document.getElementById('attempt_values').value.split(' ')
-    let testTitles = document.getElementById('test_titles').value.split(' ')
+    let testTitles = JSON.parse(document.getElementById('test_titles').value.split(' '))
     let testLevels = document.getElementById('test_levels').value.split(' ')
 
     switch (criteriaSelected) {
@@ -21,10 +21,10 @@ function fillCriteriaParameters(){
             newOptionsForParameters(attemptValues, parameterValues)
             break
         case 'named':
-            newOptionsForParameters(testTitles, parameterValues)
+            newOptionsForParametersJson(testTitles, parameterValues)
             break
         case 'level':
-            newOptionsForParameters(testLevels, parameterValues)
+            newOptionsForParametersJson(testLevels, parameterValues)
             break
     }
 }
