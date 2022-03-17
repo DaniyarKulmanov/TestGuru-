@@ -18,9 +18,8 @@ class Test < ApplicationRecord
   scope :all_titles, -> { select(:title) }
 
   class << self
-    def by_category(category)
-      joins(:category)
-        .where(category: { title: category })
+    def by_category(category_id)
+      where(category_id: category_id)
         .order(title: :desc)
         .pluck(:title)
     end
@@ -32,7 +31,7 @@ class Test < ApplicationRecord
     end
 
     def levels
-      Test.all.map { |test| test.level.to_s }
+      pluck(:level).map(&:to_s)
     end
 
     def titles

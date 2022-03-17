@@ -13,7 +13,7 @@ class Result < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = next_question
-    self.passed = true if score >= SUCCESS_RATIO && completed?
+    self.passed = score >= SUCCESS_RATIO && completed?
     save!
   end
 
