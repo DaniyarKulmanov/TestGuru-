@@ -22,10 +22,10 @@
 
   <p>
     <%= form.label :parameter %><br>
-    <%= form.select :parameter, Category.all.collect { |c| [c.title, c.id] } %><br>
+    <%= form.select :parameter, categories %><br>
   </p>
 
-  <%= hidden_field_tag 'category_titles', (Category.all.collect { |c| [c.id, c.title] }).to_json.html_safe %>
+  <%= hidden_field_tag 'category_titles', (categories).to_json.html_safe %>
   <%= hidden_field_tag 'attempt_values', Badge::ATTEMPTS.to_a %>
   <%= hidden_field_tag 'test_titles', Test.titles %>
   <%= hidden_field_tag 'test_levels', Test.levels.uniq %>

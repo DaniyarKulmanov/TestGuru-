@@ -48,6 +48,6 @@ function newOptionsForParametersJson(newOptions, selectOptionParameters ) {
     removeOptions(selectOptionParameters)
 
     for (let [key, value] of newOptions) {
-        selectOptionParameters.options.add(new Option(value, key));
+        selectOptionParameters.options.add(new Option(key, value));
     }
 }

@@ -9,7 +9,9 @@ class Badge < ApplicationRecord
   has_many :users, through: :earnings
 
   validates :name, :filename, presence: true
-  validates :parameter, inclusion: { in: Category.titles }, if: :criteria_category?
+
+  # TODO: move to FormObject
+  validates :parameter, inclusion: { in: Category.pluck(:id).map(&:to_s) }, if: :criteria_category?
   validates :parameter, inclusion: { in: ATTEMPTS }, if: :criteria_attempts?
   validates :parameter, inclusion: { in: Test.titles }, if: :criteria_named?
   validates :parameter, inclusion: { in: Test.levels }, if: :criteria_level?

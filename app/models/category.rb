@@ -7,5 +7,5 @@ class Category < ApplicationRecord
 
   validates :title, presence: true
 
-  scope :titles, -> { pluck(:title) }
+  scope :titles, -> { select(:title) }
 end
