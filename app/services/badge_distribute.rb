@@ -17,8 +17,6 @@ class BadgeDistribute
 
   attr_reader :user
 
-  # TODO: not work
-
   def category?(parameter)
     (Test.by_category(parameter) - user.passed_tests.by_category(parameter)).empty?
   end
