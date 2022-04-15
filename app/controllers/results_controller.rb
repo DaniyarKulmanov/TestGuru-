@@ -13,7 +13,7 @@ class ResultsController < ApplicationController
 
     if @result.completed?
       TestsMailer.completed_test(@result).deliver_now
-      BadgeDistribute.new(current_user).call
+      BadgeDistribute.new(@result).call
 
       redirect_to attempt_result_path(@result)
     else
