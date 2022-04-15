@@ -7,7 +7,11 @@ class AbstractRuleSpecification
     @result = result
   end
 
-  def satisfied_by?
+  def satisfied?
     raise "#{__method__} undefined for #{self.class}"
   end
+
+  private
+
+  attr_reader :parameter, :result
 end

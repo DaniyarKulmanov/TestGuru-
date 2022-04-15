@@ -1,13 +1,19 @@
 # frozen_string_literal: true
 
 class BadgeDistribute
+  # TODO: add all rule specifications to constant RULES
+  RULES = {
+    category: PassedCategoriesRule
+  }.freeze
+
   def initialize(result)
-    @user = result
+    @result = result
   end
 
   def call
     Badge.select do |badge|
-      # user.badges.push(badge) if send("#{badge.criteria}?", badge.parameter)
+      rule_specification = RULES[badge.criteria.to_sym].new(parameter: badge.parameter, result: @result)
+      grand_badge(badge) if rule_specification.satisfied?
     end
   rescue NoMethodError
     t('.services.badge.errors.criteria')
@@ -15,24 +21,7 @@ class BadgeDistribute
 
   private
 
-  def grand_badge?; end
-
-  # attr_reader :user
-  #
-  # def category?(parameter)
-  #   (Test.by_category(parameter) - user.passed_tests.by_category(parameter)).empty?
-  # end
-  #
-  # def attempts?(parameter)
-  #   user.passed_tests.count == parameter.to_i
-  # end
-  #
-  # def named?(parameter)
-  #   result = user.results.last
-  #   result.test.title == parameter && result.passed
-  # end
-  #
-  # def level?(parameter)
-  #   (Test.where(level: parameter).count - user.passed_tests.where(level: parameter).count) <= 0
-  # end
+  def grand_badge(badge)
+    @result.user.badges << badge
+  end
 end
