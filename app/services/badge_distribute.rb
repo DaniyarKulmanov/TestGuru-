@@ -10,6 +10,7 @@ class BadgeDistribute
     @result = result
   end
 
+  # TODO: try to use send
   def call
     Badge.select do |badge|
       rule_specification = RULES[badge.criteria.to_sym].new(parameter: badge.parameter, result: @result)
