@@ -3,6 +3,6 @@
     <td class="text-center"><%= badge.name %></td>
     <td class="text-center"><%= image_tag(badge.filename) %></td>
     <td class="text-center"><%= t("activerecord.attributes.badge.criteria.#{badge.criteria}") %></td>
-    <td class="text-center"><%= badge.parameter %></td>
+    <td class="text-center"><%= parameter_name(badge) %></td>
   </tr>
 </tbody>
