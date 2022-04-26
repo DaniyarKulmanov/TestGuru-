@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-class PassedTestsRule < AbstractRuleSpecification
-  def satisfied?
-    test?(parameter)
-  end
+module BadgeRules
+  class PassedTestsRule < AbstractRuleSpecification
+    def satisfied?
+      test?(parameter)
+    end
 
-  private
+    private
 
-  def test?(parameter)
-    result.test.title == parameter && result.passed
+    def test?(parameter)
+      result.test.title == parameter && result.passed
+    end
   end
 end
