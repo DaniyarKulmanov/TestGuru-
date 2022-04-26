@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class BadgeDistribute
-  # TODO: add all rule specifications to constant RULES
   RULES = {
-    category: PassedCategoriesRule
+    category: BadgeRules::PassedCategoriesRule,
+    attempts: BadgeRules::SuccessfulAttemptsRule,
+    test: BadgeRules::PassedTestsRule,
+    level: BadgeRules::PassedTestLevelsRule
   }.freeze
 
   def initialize(result)
@@ -17,7 +19,7 @@ class BadgeDistribute
       grand_badge(badge) if rule_specification.satisfied?
     end
   rescue NoMethodError
-    t('.services.badge.errors.criteria')
+    I18n.t('.services.badge.errors.criteria')
   end
 
   private
