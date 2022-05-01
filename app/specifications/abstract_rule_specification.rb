@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class AbstractRuleSpecification
-
   def initialize(parameter:, result:)
     @parameter = parameter
     @result = result
