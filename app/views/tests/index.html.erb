@@ -3,9 +3,8 @@
 <table class="table table-bordered border-primary">
   <thead>
     <tr>
-      <th><%= t('helpers.label.test.title') %></th>
-      <th class="text-center"><%= t('helpers.label.test.level') %></th>
-      <th class="text-center"><%= t('.question_count') %></th>
+      <th><%= t('activerecord.attributes.test.title') %></th>
+      <%= render 'shared/test_header' %>
       <th class="text-center"><%= t('.actions') %></th>
     </tr>
   </thead>

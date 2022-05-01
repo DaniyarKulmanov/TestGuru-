@@ -24,6 +24,8 @@ en:
       badge:
         one: 'Badge'
         many: 'Badges'
+      category:
+        one: "Category"
 
     attributes:
       test:

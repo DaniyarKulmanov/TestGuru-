@@ -22,6 +22,8 @@ ru:
       badge:
         one: 'Бэйдж'
         many: 'Бэйджи'
+      category:
+        one: "Категория"
 
     attributes:
       test:
