@@ -23,7 +23,7 @@ module BadgeRules
     attr_accessor :category_tests
 
     def next_progress
-      Test.by_category(parameter).each { |test| category_tests[test] = (earned_category_badges(Badge.criteria(:category)) + 1) }
+      Test.by_category(parameter).each { |test| category_tests[test] = (earned_category_badges(Badge.criteria[:category]) + 1) }
     end
 
     def earned_category_badges(criteria)

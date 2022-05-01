@@ -21,7 +21,7 @@ module BadgeRules
     attr_accessor :level_tests
 
     def next_progress
-      Test.by_level(parameter).each { |test| level_tests[test] = (earned_level_badges(Badge.criteria(:level)) + 1) }
+      Test.by_level(parameter).each { |test| level_tests[test] = (earned_level_badges(Badge.criteria[:level]) + 1) }
     end
 
     def earned_level_badges(criteria)

@@ -3,13 +3,8 @@
 module BadgeRules
   class SuccessfulAttemptsRule < AbstractRuleSpecification
     def satisfied?
-      attempts?(parameter)
-    end
-
-    private
-
-    def attempts?(parameter)
-      user.passed_tests.count == parameter.to_i
+      user_result_all = Result.where(user: result.user, test: result.test)
+      user_result_all[parameter.to_i - 1].passed == true if user_result_all[parameter.to_i - 1].present?
     end
   end
 end
