@@ -3,13 +3,7 @@
 module BadgeRules
   class PassedTestsRule < AbstractRuleSpecification
     def satisfied?
-      test?(parameter)
-    end
-
-    private
-
-    def test?(parameter)
-      result.test.title == parameter && result.passed
+      result.test.title == Test.find(parameter).title
     end
   end
 end

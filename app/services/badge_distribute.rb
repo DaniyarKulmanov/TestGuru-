@@ -4,7 +4,7 @@ class BadgeDistribute
   RULES = {
     category: BadgeRules::PassedCategoriesRule,
     attempts: BadgeRules::SuccessfulAttemptsRule,
-    test: BadgeRules::PassedTestsRule,
+    named: BadgeRules::PassedTestsRule,
     level: BadgeRules::PassedTestLevelsRule
   }.freeze
 
