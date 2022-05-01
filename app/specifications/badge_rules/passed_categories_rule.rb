@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# TODO: bug if new test added to category, need to finish new test as many times as old tests
 module BadgeRules
   class PassedCategoriesRule < AbstractRuleSpecification
 
@@ -10,22 +11,16 @@ module BadgeRules
     end
 
     def satisfied?
-      category_tests == user_passed_category_tests && !category_tests.empty?
+      if category_tests.empty?
+        false
+      else
+        category_tests == user_passed_category_tests
+      end
     end
 
     private
 
     attr_accessor :category_tests
-
-    # def category?
-    #   next_progress
-    #   category_tests == user_passed_category_tests
-    # end
-
-    # move to abstract rule ?
-    # def count_badges
-    #   result.user.badges.count { |badge| badge.criteria_category? && badge.parameter.to_i == 14 }
-    # end
 
     def next_progress
       Test.by_category(parameter).each { |test| category_tests[test] = (earned_category_badges('0') + 1) }
