@@ -32,5 +32,11 @@ class Test < ApplicationRecord
     def levels
       pluck(:level).map(&:to_s)
     end
+
+    def by_level(level)
+      where(level: level)
+        .order(title: :desc)
+        .pluck(:title)
+    end
   end
 end
