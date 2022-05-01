@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Result < ApplicationRecord
-  SUCCESS_RATIO = 85
+  SUCCESS_RATIO = 50
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
