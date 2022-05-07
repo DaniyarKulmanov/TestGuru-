@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 class AbstractRuleSpecification
-  def initialize(parameter:, result:)
-    @parameter = parameter
+  def initialize(badge:, result:)
+    @badge = badge
     @result = result
   end
 
   def satisfied?
-    raise "#{__method__} undefined for #{self.class}"
+    result.user.badges.exclude?(badge)
   end
 
   private
 
-  attr_reader :parameter, :result
+  attr_reader :badge, :result
 end

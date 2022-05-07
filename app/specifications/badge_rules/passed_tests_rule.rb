@@ -3,7 +3,7 @@
 module BadgeRules
   class PassedTestsRule < AbstractRuleSpecification
     def satisfied?
-      result.test.title == Test.find(parameter).title
+      result.test.title == Test.find(badge.parameter).title && super
     end
   end
 end

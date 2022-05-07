@@ -2,34 +2,22 @@
 
 module BadgeRules
   class PassedTestLevelsRule < AbstractRuleSpecification
-    def initialize(parameter:, result:)
+    def initialize(badge:, result:)
       super
-      @level_tests = {}
-      next_progress
+      @level_tests = Test.by_level(badge.parameter.to_i)
+      @user_level_tests = result.user.passed_tests.by_level(badge.parameter.to_i)
     end
 
     def satisfied?
-      if level_tests.empty?
+      if level_tests.empty? || !super
         false
       else
-        level_tests == user_passed_category_tests
+        (level_tests & user_level_tests) == level_tests
       end
     end
 
     private
 
-    attr_accessor :level_tests
-
-    def next_progress
-      Test.by_level(parameter).each { |test| level_tests[test] = (earned_level_badges(Badge.criteria[:level]) + 1) }
-    end
-
-    def earned_level_badges(criteria)
-      result.user.badges.where(criteria: criteria, parameter: parameter).count
-    end
-
-    def user_passed_category_tests
-      result.user.passed_tests.by_level(parameter).tally
-    end
+    attr_accessor :level_tests, :user_level_tests
   end
 end
