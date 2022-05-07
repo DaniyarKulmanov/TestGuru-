@@ -2,17 +2,16 @@
 
 class BadgeDistribute
   RULES = {
-    category: BadgeRules::PassedCategoriesRule,
+    category: BadgeRules::PassedByRule,
     attempts: BadgeRules::SuccessfulAttemptsRule,
     named: BadgeRules::PassedTestsRule,
-    level: BadgeRules::PassedTestLevelsRule
+    level: BadgeRules::PassedByRule
   }.freeze
 
   def initialize(result)
     @result = result
   end
 
-  # TODO: try to use send
   def call
     Badge.select do |badge|
       rule_specification = RULES[badge.criteria.to_sym].new(badge: badge, result: @result)
