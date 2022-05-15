@@ -1,5 +1,9 @@
 <h1><%= t('.test', title: @result.test.title) %></h1>
 
+<h3><%= t('activerecord.attributes.test.timer') %></h3>
+
+<div id = "timer"></div>
+
 <p><%= t('.total.questions', count: @result.test.questions.count) %></p>
 
 <p><%= t('.current_question', question_id: @result.current_question.id ) %></p>

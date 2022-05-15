@@ -30,7 +30,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category: 'Категория'
-        timer: 'Таймер'
+        timer: 'Таймер(минуты)'
       user:
         email: 'Почта'
         first_name: "Имя"

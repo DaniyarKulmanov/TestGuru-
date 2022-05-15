@@ -32,7 +32,7 @@ en:
         title: 'Name'
         level: 'Level'
         category: 'Category'
-        timer: 'Timer'
+        timer: 'Timer(minutes)'
       user:
         email: 'email'
         first_name: 'First name'

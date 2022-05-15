@@ -2,6 +2,10 @@
 
 <h2><%= t('.level', level: @test.level )%></h2>
 
+<h2><%= t('activerecord.attributes.test.category')%> <%= @test.category.title %></h2>
+
+<h2><%= t('activerecord.attributes.test.timer')%> <%= @test.timer %></h2>
+
 <%= link_to t('new', name: t('activerecord.models.question.one').downcase), new_admin_test_question_path(@test) %>
 
 <h2><%= t('activerecord.models.question.many') %></h2>
