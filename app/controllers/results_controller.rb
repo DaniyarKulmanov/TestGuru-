@@ -3,6 +3,7 @@
 class ResultsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_result, only: %i[show attempt update gist]
+  around_action :check_time, only: :show
 
   def show; end
 
@@ -25,5 +26,9 @@ class ResultsController < ApplicationController
 
   def set_result
     @result = Result.find(params[:id])
+  end
+
+  def check_time
+    redirect_to attempt_result_path(@result) if (@result.created_at.time + 3.seconds) > Time.now
   end
 end
