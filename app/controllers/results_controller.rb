@@ -10,7 +10,7 @@ class ResultsController < ApplicationController
 
   def update
     @result.accept!(params[:answer_ids])
-    byebug
+
     if @result.completed?
       TestsMailer.completed_test(@result).deliver_now
       BadgeDistribute.new(@result).call

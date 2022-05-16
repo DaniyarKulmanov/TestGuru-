@@ -1,3 +1,15 @@
+document.addEventListener('turbolinks:load', function() {
+    let control = document.getElementById('test_timer')
+
+    if (control) {
+        window.onload = function () {
+            let testMinutes = 60 * Number(document.getElementById('test_timer').value),
+                display = document.getElementById('timer');
+            startTimer(testMinutes, display);
+        };
+    }
+})
+
 function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
 
@@ -11,13 +23,24 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            window.location.href = document.getElementById('attempt_url').value
+            let attempt_url = document.getElementById('attempt_url').value
+            updateTest( attempt_url )
+            window.location.href = attempt_url
         }
     }, 1000);
 }
 
-window.onload = function () {
-    let testMinutes = 60 * Number(document.getElementById('test_timer').value),
-        display = document.getElementById('timer');
-    startTimer(testMinutes, display);
-};
+function updateTest(url) {
+    let http = new XMLHttpRequest();
+    let params = 'orem=ipsum&name=binny';
+    http.open('GET', url, true);
+
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState === 4 && http.status === 200) {
+            alert(http.responseText);
+        }
+    }
+    http.send(params);
+}
