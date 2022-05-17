@@ -10,6 +10,7 @@ document.addEventListener('turbolinks:load', function() {
     }
 })
 
+// save current duration to timer
 function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
 
@@ -22,6 +23,8 @@ function startTimer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
 
+        document.getElementById('timer').value = display.textContent / 60
+
         if (--timer < 0) {
             let attempt_url = document.getElementById('attempt_url').value
             updateTest( attempt_url )
@@ -32,7 +35,6 @@ function startTimer(duration, display) {
 
 function updateTest(url) {
     let http = new XMLHttpRequest();
-    let params = 'orem=ipsum&name=binny';
     http.open('GET', url, true);
 
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -42,5 +44,5 @@ function updateTest(url) {
             alert(http.responseText);
         }
     }
-    http.send(params);
+    http.send();
 }
