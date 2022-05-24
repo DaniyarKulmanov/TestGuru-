@@ -10,9 +10,7 @@ document.addEventListener('turbolinks:load', function() {
 // save current duration to timer
 function startTimer(timerData) {
     let timer = timerData.dataset.duration, minutes, seconds;
-    let duration = timer * 60
-    // Set the date we're counting down to
-    let countDownDate = Math.floor(new Date(timerData.dataset.countDownDate).getTime() / 1000) + duration;
+    let countDownDate = Math.floor(new Date(timerData.dataset.countDownDate).getTime() / 1000) + parseInt(timer);
 
     setInterval(function () {
 
@@ -20,17 +18,17 @@ function startTimer(timerData) {
         let now = Math.floor(new Date().getTime() / 1000);
 
         // Find the distance between now and the count down date
-        let distance = now - countDownDate;
+        let distance = countDownDate - now;
 
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+        minutes = parseInt(distance / 60, 10);
+        seconds = parseInt(distance % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         timerData.textContent = minutes + ":" + seconds;
 
-        if ( distance > duration) {
+        if ( Math.floor(distance) <= 0 ) {
             let attempt_url = timerData.dataset.attemptUrl
             updateTest( attempt_url )
             window.location.href = attempt_url
