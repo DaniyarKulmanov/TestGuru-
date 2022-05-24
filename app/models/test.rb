@@ -8,8 +8,6 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :users, through: :results
 
-  before_validation :convert_timer_to_seconds, on: %i[create update]
-
   validates :title, presence: true
   validates :level, numericality: { greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level, message: 'Title and level must be uniq' }
