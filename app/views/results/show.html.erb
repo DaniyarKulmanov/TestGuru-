@@ -2,9 +2,7 @@
 
 <h3><%= t('activerecord.attributes.test.timer') %></h3>
 
-<div id = "timer"></div>
-
-<%= hidden_field_tag 'test_timer', @result.test.timer %>
+<%= timer_html %>
 
 <%= hidden_field_tag 'attempt_url', attempt_result_path(@result) %>
 

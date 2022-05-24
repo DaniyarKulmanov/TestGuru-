@@ -35,4 +35,12 @@ module ResultsHelper
                                     current_question_number: @result.test.questions.find_index(@result.current_question) }),
                 class: 'progress')
   end
+
+  def timer_html
+    content_tag(:div, nil,
+                id: 'timer',
+                data: { duration: @result.test.timer,
+                        attempt_url: attempt_result_path(@result),
+                        count_down_date: @result.created_at.utc.iso8601 })
+  end
 end

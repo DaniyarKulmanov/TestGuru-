@@ -1,32 +1,37 @@
 document.addEventListener('turbolinks:load', function() {
-    let control = document.getElementById('test_timer')
+    let control = document.getElementById('timer')
 
     if (control) {
-        window.onload = function () {
-            let testMinutes = 60 * Number(document.getElementById('test_timer').value),
-                display = document.getElementById('timer');
-            startTimer(testMinutes, display);
-        };
+        let timerData = control, duration = timerData.dataset.duration
+        startTimer(control);
     }
 })
 
 // save current duration to timer
-function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
+function startTimer(timerData) {
+    let timer = timerData.dataset.duration, minutes, seconds;
+    let duration = timer * 60
+    // Set the date we're counting down to
+    let countDownDate = Math.floor(new Date(timerData.dataset.countDownDate).getTime() / 1000) + duration;
 
     setInterval(function () {
+
+        // Get today's date and time
+        let now = Math.floor(new Date().getTime() / 1000);
+
+        // Find the distance between now and the count down date
+        let distance = now - countDownDate;
+
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+        timerData.textContent = minutes + ":" + seconds;
 
-        document.getElementById('timer').value = display.textContent / 60
-
-        if (--timer < 0) {
-            let attempt_url = document.getElementById('attempt_url').value
+        if ( distance > duration) {
+            let attempt_url = timerData.dataset.attemptUrl
             updateTest( attempt_url )
             window.location.href = attempt_url
         }
@@ -35,11 +40,11 @@ function startTimer(duration, display) {
 
 function updateTest(url) {
     let http = new XMLHttpRequest();
-    http.open('GET', url, true);
 
+    http.open('GET', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-    http.onreadystatechange = function() {//Call a function when the state changes.
+    http.onreadystatechange = function() {
         if(http.readyState === 4 && http.status === 200) {
             alert(http.responseText);
         }
