@@ -42,10 +42,4 @@ class Test < ApplicationRecord
         .pluck(:title)
     end
   end
-
-  private
-
-  def convert_timer_to_seconds
-    self.timer *= 60
-  end
 end
