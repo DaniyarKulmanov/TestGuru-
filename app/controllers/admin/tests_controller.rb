@@ -10,12 +10,11 @@ class Admin::TestsController < Admin::BaseController
   def show; end
 
   def new
-    @test = Test.new
+    @test = current_user.created_tests.new
   end
 
   def create
-    @test = Test.new(test_params)
-    set_author
+    @test = current_user.created_tests.build(test_params)
 
     if @test.save
       redirect_to admin_test_path(@test), notice: t('.success')
@@ -60,9 +59,5 @@ class Admin::TestsController < Admin::BaseController
 
   def set_test
     @test = Test.find(params[:id])
-  end
-
-  def set_author
-    @test.author = current_user
   end
 end

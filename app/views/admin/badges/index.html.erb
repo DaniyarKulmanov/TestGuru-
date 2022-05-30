@@ -1,0 +1,17 @@
+<h2><%= t('activerecord.models.badge.many') %></h2>
+
+<p><%= link_to t('new', name: t('activerecord.models.badge.one')), new_admin_badge_path(@badge) %></p>
+
+<table class="table table-striped">
+  <thead>
+  <tr class="table-info">
+    <th class="text-center"><%= t('activerecord.attributes.badge.name')%></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.filename')%></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.criteria.one') %></th>
+    <th class="text-center"><%= t('activerecord.attributes.badge.parameter') %></th>
+    <th colspan="4" class="text-center"><%= t('actions') %></th>
+  </tr>
+  </thead>
+  <%= render @badges %>
+
+</table>

@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     if I18n.default_locale == I18n.locale
       { lang: I18n.locale }
     else
-      {}
+      params[:lang].nil? ? {} : { lang: params[:lang] }
     end
   end
 

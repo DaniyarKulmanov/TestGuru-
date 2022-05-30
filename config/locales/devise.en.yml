@@ -20,6 +20,7 @@ en:
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
+      unauthorized: 'You are not authorized to view this page'
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
@@ -100,5 +101,4 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
-  become_guru: "Become a Ruby on Rails Guru"
   sign_up: "Sign up"

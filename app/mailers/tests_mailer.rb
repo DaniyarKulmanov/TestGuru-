@@ -4,7 +4,6 @@ class TestsMailer < ApplicationMailer
   def completed_test(result)
     @user = result.user
     @test = result.test
-
-    mail to: @user.email, subject: 'Congratulations you are now a Guru'
+    mail to: @user.email, subject: t('results.attempt.completed', title: @test.title)
   end
 end

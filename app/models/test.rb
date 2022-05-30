@@ -16,16 +16,27 @@ class Test < ApplicationRecord
   scope :advanced, -> { where(level: 2..4) }
   scope :pro, -> { where(level: 5..Float::INFINITY) }
 
-  def self.by_category(category)
-    joins(:category)
-      .where(category: { title: category })
-      .order(title: :desc)
-      .pluck(:title)
-  end
+  class << self
+    def by_category(category_id)
+      where(category_id: category_id)
+        .order(title: :desc)
+        .pluck(:title)
+    end
 
-  def self.only_filled
-    includes(:questions)
-      .where.not(questions: { id: nil })
-      .sort
+    def only_filled
+      includes(:questions)
+        .where.not(questions: { id: nil })
+        .sort
+    end
+
+    def levels
+      pluck(:level).map(&:to_s)
+    end
+
+    def by_level(level)
+      where(level: level)
+        .order(title: :desc)
+        .pluck(:title)
+    end
   end
 end

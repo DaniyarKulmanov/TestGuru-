@@ -7,7 +7,9 @@ ru:
         many: "%{count} пользователей"
         other: "%{count} пользователя"
       admin: "Администратор"
-      test: "Тест"
+      test:
+        one: "Тест"
+        many: "Тесты"
       question:
         one: "Вопрос"
         many: "Вопросы"
@@ -17,6 +19,11 @@ ru:
       gist:
         one: "Гист"
         many: "Гисты"
+      badge:
+        one: 'Бэйдж'
+        many: 'Бэйджи'
+      category:
+        one: "Категория"
 
     attributes:
       test:
@@ -42,9 +49,34 @@ ru:
         question_url: "Ссылка на вопрос"
         gist_url: "Ссылка на гист"
         email: "Автор гиста"
+      badge:
+        name: 'Название'
+        filename: 'Иконка'
+        parameter: 'Параметр критерия'
+        criteria:
+          one: 'Критерий'
+          many: 'Критерии'
+          category: 'Категория'
+          attempts: 'Попыток'
+          named: 'Именной'
+          level: 'Уровень'
 
     errors:
+      messages:
+        record_invalid: 'Не верная запись'
       models:
+        badge:
+          attributes:
+            name:
+              blank: 'не может быть пустым'
+            filename:
+              blank: 'не выбрана'
+            criteria:
+              blank: 'не выбран'
+              inclusion: 'выберите из выпдающего списка'
+              taken: 'уже выбран в другом бейдже'
+            parameter:
+              inclusion: 'не верный'
         question:
           attributes:
             body:

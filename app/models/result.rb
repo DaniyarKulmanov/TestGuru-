@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Result < ApplicationRecord
-  SUCCESS_RATIO = 85
+  SUCCESS_RATIO = 50
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -13,15 +13,12 @@ class Result < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = next_question
+    self.passed = score >= SUCCESS_RATIO && completed?
     save!
   end
 
   def completed?
     current_question.nil?
-  end
-
-  def passed?
-    score >= SUCCESS_RATIO
   end
 
   def score

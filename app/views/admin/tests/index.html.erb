@@ -1,6 +1,6 @@
 <h2><%= t('.header') %></h2>
 
-<p><%= link_to t('admin.tests.new.header'), new_admin_test_path(@test) %></p>
+<p><%= link_to t('new', name: t('activerecord.models.test.one')), new_admin_test_path(@test) %></p>
 
 <%= render 'shared/errors', resource: @test %>
 
@@ -8,12 +8,11 @@
   <thead>
     <tr>
       <th class="sort-by-title pointer">
-        <%= t('admin.tests.show.title', title: nil)%>
+        <%= t('activerecord.attributes.test.title')%>
         <%= octicon 'arrow-up', class: 'text-success' %>
         <%= octicon 'arrow-down', class: 'text-success' %>
       </th>
-      <th class="text-center"><%= t('admin.tests.show.level', level: nil)%></th>
-      <th class="text-center"><%= t('.questions_count') %></th>
+      <%= render 'shared/test_header' %>
       <th colspan="4" class="text-center"><%= t('actions') %></th>
     </tr>
   </thead>

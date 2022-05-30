@@ -1,0 +1,36 @@
+<%= form_with model: [:admin, @badge] do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+  </p>
+
+  <p>
+    <%= form.label :filename %>
+    <%= form.collection_radio_buttons(:filename, all_images, :first, :last) do |b| %>
+      <%= b.label { b.radio_button + image_tag(b.text) } %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= form.label :criteria %>
+    <%= form.select :criteria,
+                    Badge.criteria.keys.collect{ |criteria| [human_enum_name(:criteria, criteria), criteria] },
+                    prompt: t('prompt', name: t('activerecord.attributes.badge.criteria.one')) %>
+  </p>
+
+  <p>
+    <%= form.label :parameter %><br>
+    <%= form.select :parameter, categories_titles %><br>
+  </p>
+
+  <%= hidden_field_tag 'category_titles', categories_titles.to_json.html_safe %>
+  <%= hidden_field_tag 'attempt_values', Badge::ATTEMPTS.to_a %>
+  <%= hidden_field_tag 'test_titles', tests_titles.to_json.html_safe %>
+  <%= hidden_field_tag 'test_levels', Test.levels.uniq %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

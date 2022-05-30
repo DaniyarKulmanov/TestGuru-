@@ -9,6 +9,7 @@ ru:
   new: "Новый %{name}"
   gist_question: 'Вопрос для теста %{title} отправлено из TestGuru'
   gist_filename: 'test-guru-вопрос.txt'
+  become_guru: "Стань гуру Ruby on Rails"
 
   test:
     start: "Начать!"
@@ -75,8 +76,6 @@ ru:
       index:
         header: 'Доступные тесты'
         questions_count: "Всего вопросов"
-      new:
-        header: 'Новый тест'
       edit:
         header: 'Изменить тест'
       create:
@@ -94,7 +93,6 @@ ru:
       log_in: 'Войти'
       sign_up: 'Регистрация'
       admin_panel: 'Админ'
-      gists_list: 'Gists'
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -145,3 +143,17 @@ ru:
     submit:
       create: "Создать %{model}"
       update: "Обновить %{model}"
+
+  badges:
+    CRITERIA:
+      completed_all: 'завершить все тесты'
+      first_try: 'с первой попытки'
+      backend: 'все тесты темы Backend'
+    index:
+      earned_badges: "Заработанные бейджи"
+  success: "%{name} создан"
+  prompt: "Выберите %{name}"
+  services:
+    badge:
+      errors:
+        criteria: "Не найдено правило для критерия"

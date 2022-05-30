@@ -1,0 +1,8 @@
+<h1><%= t('activerecord.models.badge.one') %></h1>
+
+<p><%= t('activerecord.attributes.badge.name') %> <%= @badge.name %> </p>
+<p><%= t('activerecord.attributes.badge.filename') %> <%= image_tag(@badge.filename) %> </p>
+<p><%= t('activerecord.attributes.badge.criteria.one') %> <%= human_enum_name(:criteria, @badge.criteria) %> </p>
+<p><%= t('activerecord.attributes.badge.parameter') %> <%= parameter_name(@badge) %> </p>
+
+<p> <%= link_to t('back'), admin_badges_path %> </p>

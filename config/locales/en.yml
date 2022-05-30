@@ -9,6 +9,7 @@ en:
   new: "New %{name}"
   gist_question: 'A question about %{title} from TestGuru'
   gist_filename: 'test-guru-question.txt'
+  become_guru: "Become a Ruby on Rails Guru"
 
   test:
     start: "Go!"
@@ -74,8 +75,6 @@ en:
       index:
         header: 'Available tests'
         questions_count: "Total questions"
-      new:
-        header: 'New test'
       edit:
         header: 'Edit test'
       create:
@@ -92,7 +91,6 @@ en:
       sign_up: 'Sing up'
       welcome: 'Welcome'
       admin_panel: 'Admin panel'
-      gists_list: 'Gists list'
     errors:
       header:
         one: "Total %{count} error detected"
@@ -141,3 +139,17 @@ en:
     submit:
       create: "Create a %{model}"
       update: "Update a %{model}"
+
+  badges:
+    CRITERIA:
+      completed_all: 'completed all tests'
+      first_try: 'first try'
+      backend: 'backend'
+    index:
+      earned_badges: "Earned badges"
+  success: "%{name} created"
+  prompt: "Choose %{name}"
+  services:
+    badge:
+      errors:
+        criteria: 'No rule for this criteria'

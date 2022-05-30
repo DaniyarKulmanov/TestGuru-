@@ -10,6 +10,7 @@ en:
       test:
         one: 'Test'
         other: 'Tests'
+        many: "Tests"
       question:
         one: 'Question'
         other: 'Questions'
@@ -20,6 +21,11 @@ en:
       gist:
         one: 'Gist'
         many: "Gists"
+      badge:
+        one: 'Badge'
+        many: 'Badges'
+      category:
+        one: "Category"
 
     attributes:
       test:
@@ -45,9 +51,34 @@ en:
         question_url: "Question link"
         gist_url: "Gist link"
         email: "Gist author"
+      badge:
+        name: 'Name'
+        filename: 'Icon'
+        parameter: 'Criteria parameter'
+        criteria:
+          one: 'Criteria'
+          many: 'Criteria'
+          category: 'Category'
+          attempts: 'Attempts'
+          named: 'Named'
+          level: 'Level'
 
     errors:
+      messages:
+        record_invalid: 'wrong record'
       models:
+        badge:
+          attributes:
+            name:
+              blank: "can't be blank"
+            filename:
+              blank: 'please choose'
+            criteria:
+              blank: 'not chosen'
+              inclusion: 'choose from dropdown list'
+              taken: 'already taken'
+            parameter:
+              inclusion: 'wrong'
         question:
           attributes:
             body:

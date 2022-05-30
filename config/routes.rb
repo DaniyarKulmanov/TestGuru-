@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'badges/index'
   devise_for :users, path: :gurus,
                      path_names: { sign_in: :login, sign_out: :logout },
                      controllers: { sessions: 'users/sessions',
@@ -35,5 +36,8 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: %i[index destroy]
+    resources :badges, shallow: true, expect: :index
   end
+
+  resources :badges, only: :index
 end
