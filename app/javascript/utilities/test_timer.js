@@ -10,6 +10,7 @@ document.addEventListener('turbolinks:load', function() {
 function startTimer(timerData) {
     let timer = parseInt(timerData.dataset.duration) * 60, minutes, seconds
     let countDownDate = Math.floor(new Date(timerData.dataset.countDownDate).getTime() / 1000) + timer
+    let form = document.getElementById("result_test")
 
     setInterval(function () {
         let now = Math.floor(new Date().getTime() / 1000)
@@ -26,7 +27,7 @@ function startTimer(timerData) {
         if ( Math.floor(distance) <= 0 ) {
             let attempt_url = timerData.dataset.attemptUrl
             updateTest( attempt_url )
-            window.location.href = attempt_url
+            form.submit()
         }
     }, 1000)
 }

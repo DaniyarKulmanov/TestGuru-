@@ -18,7 +18,7 @@
 
 <p><%= t('.answers') %></p>
 
-<%= form_with url: result_path(@result), method: :put do |form| %>
+<%= form_with url: result_path(@result), id: 'result_test', method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |c| %>
     <p>
       <%= c.check_box id: "answer_ids#{c.object.id}"%>

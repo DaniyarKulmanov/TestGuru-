@@ -12,7 +12,7 @@ class Result < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    self.current_question = next_question
+    self.current_question = (timer_exceeded? ? nil : next_question)
     self.passed = score >= SUCCESS_RATIO && completed?
     save!
   end
@@ -41,5 +41,9 @@ class Result < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def timer_exceeded?
+    Time.zone.now >= created_at + test.timer * 60
   end
 end
