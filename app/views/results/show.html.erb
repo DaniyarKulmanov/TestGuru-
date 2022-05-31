@@ -1,5 +1,11 @@
 <h1><%= t('.test', title: @result.test.title) %></h1>
 
+<h3><%= t('activerecord.attributes.test.timer') %></h3>
+
+<%= timer_html %>
+
+<%= hidden_field_tag 'attempt_url', attempt_result_path(@result) %>
+
 <p><%= t('.total.questions', count: @result.test.questions.count) %></p>
 
 <p><%= t('.current_question', question_id: @result.current_question.id ) %></p>
@@ -12,7 +18,7 @@
 
 <p><%= t('.answers') %></p>
 
-<%= form_with url: result_path(@result), method: :put do |form| %>
+<%= form_with url: result_path(@result), id: 'result_test', method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |c| %>
     <p>
       <%= c.check_box id: "answer_ids#{c.object.id}"%>

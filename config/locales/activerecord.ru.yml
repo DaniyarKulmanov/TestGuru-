@@ -30,6 +30,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category: 'Категория'
+        timer: 'Таймер(минуты)'
       user:
         email: 'Почта'
         first_name: "Имя"
@@ -89,6 +90,8 @@ ru:
               required: "укажите автора теста"
             title:
               blank: "не должно быть пустым"
+            timer:
+              greater_than: 'должен быть больше нуля'
         user:
           attributes:
             email:

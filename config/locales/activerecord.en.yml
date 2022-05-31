@@ -32,6 +32,7 @@ en:
         title: 'Name'
         level: 'Level'
         category: 'Category'
+        timer: 'Timer(minutes)'
       user:
         email: 'email'
         first_name: 'First name'
@@ -91,6 +92,8 @@ en:
               required: "can't be blank"
             title:
               blank: "can't be blank"
+            timer:
+              greater_than: 'should be greater than zero'
         user:
           attributes:
             email:

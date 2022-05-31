@@ -8,5 +8,6 @@ TESTS.each do |test|
   user = USERS.all.sample
   category = CATEGORIES.all.sample
   level = rand(0..3)
-  Test.find_or_create_by(title: test, level: level, author: user, category: category)
+  timer = rand(15..30)
+  Test.find_or_create_by(title: test, level: level, author: user, category: category, timer: timer)
 end
